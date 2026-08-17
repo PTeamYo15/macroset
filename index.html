@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MacroSet</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAtGVYSWZJSSoACAAAAAYAEgEDAAEAAAABAAAAGgEFAAEAAABWAAAAGwEFAAEAAABeAAAAKAEDAAEAAAACAAAAEwIDAAEAAAABAAAAaYcEAAEAAABmAAAAAAAAAGAAAAABAAAAYAAAAAEAAAAGAACQBwAEAAAAMDIxMAGRBwAEAAAAAQIDAACgBwAEAAAAMDEwMAGgAwABAAAA//8AAAKgBAABAAAAQAAAAAOgBAABAAAAQAAAAAAAAAD87sCuAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAF5WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4KPHg6eG1wbWV0YSB4bWxuczp4PSdhZG9iZTpuczptZXRhLyc+CjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczpBdHRyaWI9J2h0dHA6Ly9ucy5hdHRyaWJ1dGlvbi5jb20vYWRzLzEuMC8nPgogIDxBdHRyaWI6QWRzPgogICA8cmRmOlNlcT4KICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0nUmVzb3VyY2UnPgogICAgIDxBdHRyaWI6Q3JlYXRlZD4yMDI2LTA4LTE2PC9BdHRyaWI6Q3JlYXRlZD4KICAgICA8QXR0cmliOkRhdGE+eyZxdW90O2RvYyZxdW90OzomcXVvdDtEQUhTTXJXSmpMMCZxdW90OywmcXVvdDt1c2VyJnF1b3Q7OiZxdW90O1VBR0l6cF95em1JJnF1b3Q7LCZxdW90O2JyYW5kJnF1b3Q7OiZxdW90O0JBR0l6dVQyMVNJJnF1b3Q7LCZxdW90O3RlbXBsYXRlJnF1b3Q7OiZxdW90O1BpbmsgTW9ub2Nocm9tZSBTaW1wbGUgTW9kZXJuIE1pbmltYWxpc3QgRmFzaGlvbiBCcmFuZCBMb2dvJnF1b3Q7fTwvQXR0cmliOkRhdGE+CiAgICAgPEF0dHJpYjpFeHRJZD41NWViMDc5My1lMzVjLTRlMjQtYTY4NC03NjM2NzdjYWU3ZjE8L0F0dHJpYjpFeHRJZD4KICAgICA8QXR0cmliOkZiSWQ+NTI1MjY1OTE0MTc5NTgwPC9BdHRyaWI6RmJJZD4KICAgICA8QXR0cmliOlRvdWNoVHlwZT4yPC9BdHRyaWI6VG91Y2hUeXBlPgogICAgPC9yZGY6bGk+CiAgIDwvcmRmOlNlcT4KICA8L0F0dHJpYjpBZHM+CiA8L3JkZjpEZXNjcmlwdGlvbj4KCiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0nJwogIHhtbG5zOmRjPSdodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyc+CiAgPGRjOnRpdGxlPgogICA8cmRmOkFsdD4KICAgIDxyZGY6bGkgeG1sOmxhbmc9J3gtZGVmYXVsdCc+VW50aXRsZWQgZGVzaWduIC0gMTwvcmRmOmxpPgogICA8L3JkZjpBbHQ+CiAgPC9kYzp0aXRsZT4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6cGRmPSdodHRwOi8vbnMuYWRvYmUuY29tL3BkZi8xLjMvJz4KICA8cGRmOkF1dGhvcj5CbGFrZSBDb3J0ZXo8L3BkZjpBdXRob3I+CiA8L3JkZjpEZXNjcmlwdGlvbj4KCiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0nJwogIHhtbG5zOnhtcD0naHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyc+CiAgPHhtcDpDcmVhdG9yVG9vbD5DYW52YSBkb2M9REFIU01yV0pqTDAgdXNlcj1VQUdJenBfeXptSSBicmFuZD1CQUdJenVUMjFTSSB0ZW1wbGF0ZT1QaW5rIE1vbm9jaHJvbWUgU2ltcGxlIE1vZGVybiBNaW5pbWFsaXN0IEZhc2hpb24gQnJhbmQgTG9nbzwveG1wOkNyZWF0b3JUb29sPgogPC9yZGY6RGVzY3JpcHRpb24+CjwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9J3InPz6SM8JqAAAIQUlEQVRoge1aaUhVXRQ9ZZNZNlA22oSVUWmTVBplBRERKNmviKh+BI00EARR/SgKKmgggkrCBiwaaYAksgGaR7KJRsgsm0stLfPzfut7i7c53uG9+wa1D9w/Ls/77j1nrT3v81SqTurkP6nnkdpGEawAev369fGB1/+ZUPcNGzZs1aqV+t9xAFygj4iI2Lt3748fP4YOHYqb+LO2cbkTAo2KisrJyTE8kp+fHxcXp8JuB/ootRWuUGvQoAGuHTp0uH79OqCXl5f/+fMHH54+fdqtWzcVLg5QkmkhEMDeIa5O9AkJCS9fvgRoQq+oqMAVjjRw4EA+EyoHeT8yMhJaiY2Nbdq0qdwEt+CsQfRjx4799u2b4Oa1sLBwyJAhSguD4DnwzdTU1EOHDhUUFPz69au0tPT9+/fnz59funRpz549lccaAQUcrYcPkydP1rXOzy9evIiPj+eTSUlJubm5o0aNEsLBoJ85cybWraysNDThn2VlZZs3b2bic8lB2M6bNw8r/OMRQf/kyRO6PgS56NOnT7j5/fv3kSNHqkDtwKf79+9fUlLC8KrUpMIjpAEPTk9Pd7OBlKoNGzZQ8VyBFnj06BH8U9B//vwZN3///o1rUVERvCAwDjQZFEz0hp2QCUHMnj1b+bQDQwWl6uDBg1Q5X6QFbNHzK3JYsWKFcu9IEpcXLlwQDTkJvuVOCxYscOLABZs0acJkb0KPpNmpUydb9HStzMxM5U2GrozA/fDorVu3ZC0nIxANSWZkZNhy4J1JkyYJJgpXvnbtGrjhgeTkZCv6Xbt2qarpzj8HefTixYt+LaDr8t27d127dtVXoMBzcIUbmAjIiydPnkSkfvnyxRZ9o0aNcB09ejSyHzOsf1+izmA765ZOopvbpCTut2jRItvVoAKAljxhi37YsGGkBxOlpKT4twO3RGjiHaR/NwS4N3D07dvXtAHVMXHiRMOSkcUOEN2YVATRDxgw4OPHj4aWlFAB/XCgDyAzFBcXO+3qZIQ1a9aYrMydBg8eTHA+VuNXO3fuFMdDXXvz5o3h9WRqc+3atcpv8eGuWVlZhmsvIr68vDy0G6IFKb09evTg9k4EeP/Dhw8xMTF8F6+gNgt6JvQDBw74wm0ikJiYiNbKpRH4DJ5v166d0kKZS+Gm36WognPnzkH9HTt2fPz4sVG110C4U/GuejA+umTJEpdGkDDo16+f0nyUm6HpcOOQ5HDmzJkrV66YdI+bICYVPQA7oJkznEuyiQCEHZiJQMuWLRF/fgkYWuURjeCKHMpyEVhTxL1btGjBmiBF1AcBODp8V1n64ebNm7skQMXrngNrREdHB4xe59CsWbOjR4/qS/tQ3r59+xo3bqy0eRefN27c6BK9TgPX27dvt27dOkj0okJOkuvWrRNlQzds5liJBBl3hb/CbsqbT7ds2WJU7Uoq7QQPVHiFnvPw4UNEswp9zBdFDh8+/PTp09YGSeoorj9//sSHGzduYN7FK9u3bzeqtiQ++iv9gefPn3fv3j0M6IWDGBHVcf369XBN1MivX79iKmexlFJF371582Z2drYVPUkWe6TIK2/fvkVfffny5VOnTh0+fPjOnTtQVtjQi+gzPij16tWrffv2+DxmzBimedGu9YPhDcrjx4+3bdsWno3UFO0VlD9mSaUZvLoOG8FBVwwppaWlEZ/EA33aFJRnz57VS7VVaOrA8n1wUk8TBuv06dMN547N8KQUOT+s5yCyePWitwqbx9WrVxuWKYKU4OWdO3dWf+fJIS0QFxd39+5dpzwDGitXrlR2h2W1LGx9kZry8/N9ZEnaYdu2bXSPv8UO1D36Hw5NuvNIcTDFMcocc1cwJ1bhFWoxPT3dlEN1ldtyeP36NQ9Aa82XJPNMmTKFTZ7Vc8rKyjDpW4mRA2ofRnVVK74khWbu3LmGt7haIS5evBjdxLNnzwxLXhIOLLeMoppGv3z5ckM7JKSADKdvtJ98vnfv3gxuWw7wpYSEBFVj8SAFctOmTVb0aCEZyjt27FAe/6ZqAdHWl/gn5uDk5OSa4CAVfvfu3YZlvsGfBQUF+IAJTmk/mxJWUlISv7WNB3R1EyZMqF4OVHxkZOSRI0cM75G1DoUDV05ODqYZUydDWCkpKfQuqx2wFL5CPuDD4e8j6PRoY3Jzcw27GZ930AxjdlN2yVFvlqxBL78VzJ8/3/b1kIR7x8bGoke3RU83uH//PppkH9tTCwsXLrQGj+E9rze8h+l017Ch79OnD8+YrOipuVevXplmeR8cVq1aZXiOCq2FjxwyMzM5kYZqCom/wsJCH+iRzhMTE/2iV1oS45SMlGVaU6a5/fv3MxiC50D0GLUwNBp25+xEX1JSMmLECOU6gQgmprLS0lLDItzrxIkTUVFRKjg7UJcZGRncwNomSOoYN26ce/TCgf597NgxW8PKzUuXLrVp00YFOt+Q8YwZMxhqTmcQEP7CF0QjIEkZEG3NKxzu3bvHMcgtBy49aNAg25xtaJPu1KlTVQilhxvFxMQ8ePDAyQ7EwMro1pEIiD/lWs9DsQ2PfdDGhYKeQkeNj49HR2S7HVMtUgiDwZUR5PcILmdSDMutTIahoNc5IInpJ0smC2RnZ6uAQpmPzpkzx/D09KIYktm6dWu40FNoxtTUVNNUJDHAE77A4pj4Zs2aRQ7IRfx9BTHHY+7wtivkgJTAtFHuEWyH2s/hM5hMykWnTZsmjUpeXl7wy7nbDqlPjHD16lWEeEjb0Q7jx4/PyspC7ezSpUtIy7nbLi0tbc+ePcuWLQtPN6G/XwP/GVkt20V4pWaO+7hXtUwFdVIndfI3yr9biSA35qHgdgAAAABJRU5ErkJggg==" />
+<style>
+  :root {
+    --app-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --hover-bg: #f3f4f6;
+    --radius-pill: 24px;
+    --radius-box: 8px;
+    --accent-color: #000000;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--app-bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  .wiki-link {
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--border-color);
+    text-underline-offset: 2px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .wiki-link:hover {
+    color: var(--text-muted);
+    text-decoration-color: var(--text-muted);
+  }
+
+  header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 22px;
+    text-decoration: none;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── SEARCH ICON BUTTON ── */
+  .search-icon-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .search-icon-btn:hover {
+    background: var(--hover-bg);
+    color: var(--text-main);
+    border-color: var(--text-muted);
+  }
+  .search-icon-btn svg {
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+  }
+
+  /* ── SEARCH OVERLAY ── */
+  .search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 15vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+  }
+  .search-overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .search-overlay-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  .search-modal {
+    position: relative;
+    z-index: 1;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-10px) scale(0.97);
+    transition: transform 0.18s ease;
+    overflow: hidden;
+  }
+  .search-overlay.visible .search-modal {
+    transform: translateY(0) scale(1);
+  }
+  .search-modal-input-row {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 10px;
+  }
+  .search-modal-input-row svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--text-muted);
+    stroke-width: 2;
+    fill: none;
+    flex-shrink: 0;
+  }
+  .search-modal-input-row input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--text-main);
+    padding: 18px 0;
+    outline: none;
+  }
+  .search-modal-input-row input::placeholder { color: var(--text-muted); }
+  .search-close-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    transition: all 0.15s;
+  }
+  .search-close-btn:hover { background: var(--hover-bg); color: var(--text-main); }
+  .search-results-container {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .search-results-container:empty::after {
+    content: 'Start typing to search articles…';
+    display: block;
+    padding: 24px 20px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  /* keep existing .search-result-item styles working inside modal */
+
+  .master-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  @media (max-width: 768px) { .master-layout { grid-template-columns: 1fr; } }
+
+  .left-column { display: flex; flex-direction: column; gap: 15px; }
+  .calc-grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+  .calc-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 140px;
+  }
+  .calc-card:hover { border-color: var(--text-muted); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+  .calc-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
+  .calc-desc { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+
+  .right-column-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+  }
+  .right-column-header { font-size: 16px; font-weight: 700; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
+  .right-column-scroll { overflow-y: auto; flex: 1; padding-right: 10px; }
+  .right-column-scroll::-webkit-scrollbar { width: 6px; }
+  .right-column-scroll::-webkit-scrollbar-track { background: transparent; }
+  .right-column-scroll::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+
+  .article-pill {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    padding: 12px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background 0.1s;
+    background: var(--card-bg);
+  }
+  .article-pill:hover { background: var(--hover-bg); }
+  .article-title { font-size: 14px; color: var(--text-main); font-weight: 600; }
+  .article-summary { font-size: 12px; color: var(--text-muted); margin-top: 4px; display: block; }
+
+  .view-section { display: none; max-width: 1200px; margin: 0 auto; }
+  .view-section.active { display: block; }
+
+  .back-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  .back-btn:hover { color: var(--text-main); }
+  h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-main); }
+
+  .form-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: 25px;
+    max-width: 800px;
+  }
+  .field { margin-bottom: 15px; }
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+  }
+  input[type=text], input[type=number], select {
+    background: var(--app-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--text-muted); }
+
+  .row { display: flex; gap: 15px; align-items: center; margin-bottom: 10px; }
+  .flex1 { flex: 1; }
+
+  button.action-btn {
+    background: var(--text-main);
+    border: 1px solid var(--text-main);
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  button.action-btn:hover { background: #374151; border-color: #374151; }
+  .btn-remove {
+    padding: 6px 12px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .btn-remove:hover { background: #fee2e2; color: #ef4444; border-color: #fca5a5; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; background: var(--card-bg); border-radius: var(--radius-box); overflow: hidden; border: 1px solid var(--border-color); }
+  th, td { border-bottom: 1px solid var(--border-color); padding: 12px 15px; text-align: left; }
+  th { background: var(--app-bg); font-weight: 600; font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  tr:last-child td { border-bottom: none; }
+
+  .progress-track { background: var(--app-bg); border-radius: 4px; height: 8px; width: 100%; margin-top: 5px; overflow: hidden; }
+  .progress-bar { height: 100%; background: var(--text-main); transition: width 0.3s; }
+  .progress-bar.over { background: #ef4444; }
+  .error { color: #ef4444; background: #fee2e2; border: 1px solid #fca5a5; border-radius: 6px; padding: 12px; font-weight: 500; margin-bottom: 15px; display: none; }
+
+  .article-content {
+    font-size: 15px;
+    max-width: 800px;
+    line-height: 1.7;
+    background: var(--card-bg);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+  }
+  .article-content h3 { font-size: 18px; margin: 25px 0 10px 0; color: var(--text-main); border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
+  .article-content h4 { font-size: 14px; margin: 15px 0 5px 0; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }
+  .article-content p { margin-bottom: 15px; color: #374151; }
+  .article-content ul { margin-left: 20px; margin-bottom: 15px; color: #374151; }
+  .article-content li { margin-bottom: 8px; }
+
+  .section-header-row td {
+    background: var(--app-bg) !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.7px !important;
+    color: var(--text-muted) !important;
+    padding-top: 16px !important;
+  }
+
+  /* ── BMI RESULT STYLES ── */
+  .bmi-result-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 4px;
+  }
+  @media (max-width: 600px) { .bmi-result-wrapper { grid-template-columns: 1fr; } }
+
+  .bmi-score-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+  }
+  .bmi-score-number {
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  }
+  .bmi-score-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .bmi-class-badge {
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.06);
+    letter-spacing: 0.2px;
+  }
+
+  .bmi-figure-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bmi-description-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: 20px 24px;
+    grid-column: span 2;
+  }
+  @media (max-width: 600px) { .bmi-description-card { grid-column: span 1; } }
+  .bmi-desc-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .bmi-desc-text {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+  }
+
+  .bmi-scale-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 16px 0 8px;
+    gap: 2px;
+  }
+  .bmi-scale-segment {
+    flex: 1;
+    border-radius: 3px;
+  }
+  .bmi-scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .bmi-scale-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-box);
+    padding: 16px 20px;
+    grid-column: span 2;
+    margin-top: 0;
+  }
+  @media (max-width: 600px) { .bmi-scale-wrapper { grid-column: span 1; } }
+  .bmi-scale-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .bmi-marker-row {
+    position: relative;
+    height: 18px;
+    margin-bottom: 2px;
+  }
+  .bmi-marker-triangle {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 14px;
+    line-height: 1;
+    top: 0;
+  }
+  .bmi-class-rows {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .bmi-class-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 5px;
+  }
+  .bmi-class-row.active-class {
+    background: rgba(0,0,0,0.05);
+    font-weight: 700;
+  }
+  .bmi-class-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .bmi-class-name { flex: 1; }
+  .bmi-class-range { color: var(--text-muted); font-size: 11px; }
+
+  /* ── SETTINGS COG BUTTON ── */
+  .settings-cog-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .settings-cog-btn:hover {
+    background: var(--hover-bg);
+    color: var(--text-main);
+    border-color: var(--text-muted);
+  }
+  .settings-cog-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.4s ease;
+  }
+  .settings-cog-btn.open svg {
+    transform: rotate(60deg);
+  }
+
+  /* ── SETTINGS OVERLAY ── */
+  .settings-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 70px 20px 0 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+  }
+  .settings-overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .settings-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+  }
+  .settings-overlay.visible .settings-backdrop {
+    opacity: 1;
+  }
+  .settings-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06);
+    transform: translateY(-6px) scale(0.97);
+    transition: transform 0.18s ease;
+    overflow: hidden;
+  }
+  .settings-overlay.visible .settings-panel {
+    transform: translateY(0) scale(1);
+  }
+  .settings-panel-header {
+    padding: 14px 18px 12px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: var(--text-muted);
+  }
+  .settings-section {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .settings-section:last-child { border-bottom: none; }
+  .settings-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  /* Toggle pill group */
+  .settings-pill-group {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--app-bg);
+  }
+  .settings-pill-group button {
+    flex: 1;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    letter-spacing: 0.2px;
+    border-right: 1px solid var(--border-color);
+  }
+  .settings-pill-group button:last-child { border-right: none; }
+  .settings-pill-group button.active {
+    background: var(--text-main);
+    color: var(--card-bg);
+  }
+  .settings-pill-group button:not(.active):hover {
+    background: var(--hover-bg);
+    color: var(--text-main);
+  }
+
+  /* Font grid */
+  .font-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .font-option {
+    border: 1.5px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px 10px 8px;
+    cursor: pointer;
+    background: var(--app-bg);
+    transition: all 0.15s;
+    text-align: left;
+  }
+  .font-option:hover { border-color: var(--text-muted); background: var(--hover-bg); }
+  .font-option.active { border-color: var(--text-main); background: var(--text-main); }
+  .font-option-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .font-option.active .font-option-name { color: var(--card-bg); }
+  .font-option-preview {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+  .font-option.active .font-option-preview { color: var(--card-bg); }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ── DARK MODE VARS ── */
+  body.dark {
+    --app-bg: #111827;
+    --card-bg: #1f2937;
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+    --border-color: #374151;
+    --hover-bg: #2d3748;
+    --accent-color: #f9fafb;
+  }
+  body.dark .bmi-desc-text,
+  body.dark .article-content p,
+  body.dark .article-content ul { color: #d1d5db; }
+  body.dark .action-btn:hover { background: #4b5563; border-color: #4b5563; }
+  body.dark .bmi-class-badge { background: rgba(255,255,255,0.1); }
+  body.dark .bmi-class-row.active-class { background: rgba(255,255,255,0.07); }
+  body.dark .settings-backdrop { background: rgba(0,0,0,0.4); }
+  /* Hide metric/imperial fields based on mode */
+  .unit-imperial, .unit-metric { display: none; }
+  body.imperial .unit-imperial { display: contents; }
+  body.metric   .unit-metric   { display: contents; }
+  /* Block-level wrappers need display:block not contents */
+  .unit-imperial.unit-block, .unit-metric.unit-block { display: none; }
+  body.imperial .unit-imperial.unit-block { display: block; }
+  body.metric   .unit-metric.unit-block   { display: block; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo" onclick="switchView('home-dashboard')">MACROSET</a>
+  <div class="header-right">
+    <button class="search-icon-btn" id="searchIconBtn" onclick="toggleSearch()" aria-label="Search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </button>
+    <button class="settings-cog-btn" id="settingsCogBtn" onclick="toggleSettings()" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- SETTINGS OVERLAY -->
+<div class="settings-overlay" id="settingsOverlay" onclick="handleOverlayClick(event)">
+  <div class="settings-backdrop"></div>
+  <div class="settings-panel">
+    <div class="settings-panel-header">Settings</div>
+
+    <!-- Appearance -->
+    <div class="settings-section">
+      <div class="settings-section-label">Appearance</div>
+      <div class="settings-pill-group">
+        <button id="theme-light" onclick="setTheme('light')">Light</button>
+        <button id="theme-dark"  onclick="setTheme('dark')">Dark</button>
+      </div>
+    </div>
+
+    <!-- Units -->
+    <div class="settings-section">
+      <div class="settings-section-label">Measurement Units</div>
+      <div class="settings-pill-group">
+        <button id="btn-imperial" onclick="setUnitSystem('imperial')">Imperial</button>
+        <button id="btn-metric"   onclick="setUnitSystem('metric')">Metric</button>
+      </div>
+    </div>
+
+    <!-- Font -->
+    <div class="settings-section">
+      <div class="settings-section-label">Font</div>
+      <div class="font-grid">
+        <div class="font-option active" id="font-system" onclick="setFont('system')" data-font="system">
+          <div class="font-option-name">System</div>
+          <div class="font-option-preview" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Aa</div>
+        </div>
+        <div class="font-option" id="font-inter" onclick="setFont('inter')" data-font="inter">
+          <div class="font-option-name">Inter</div>
+          <div class="font-option-preview" style="font-family:'Inter',sans-serif;">Aa</div>
+        </div>
+        <div class="font-option" id="font-mono" onclick="setFont('mono')" data-font="mono">
+          <div class="font-option-name">Mono</div>
+          <div class="font-option-preview" style="font-family:'JetBrains Mono','Courier New',monospace;">Aa</div>
+        </div>
+        <div class="font-option" id="font-serif" onclick="setFont('serif')" data-font="serif">
+          <div class="font-option-name">Serif</div>
+          <div class="font-option-preview" style="font-family:Georgia,serif;">Aa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-overlay-backdrop" onclick="closeSearch()"></div>
+  <div class="search-modal">
+    <div class="search-modal-input-row">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="wiki-search-input" placeholder="Search wiki articles…" oninput="handleSearch(this.value)" autocomplete="off" />
+      <button class="search-close-btn" onclick="closeSearch()">ESC</button>
+    </div>
+    <div class="search-results-container" id="search-results-container"></div>
+  </div>
+</div>
+
+<!-- HOME DASHBOARD -->
+<div id="home-dashboard" class="view-section active">
+  <div class="master-layout">
+    <div class="left-column">
+      <div class="calc-grid-2x2">
+        <div class="calc-card" onclick="switchView('intake-calculator')">
+          <div class="calc-title">Daily Intake Calculator</div>
+          <div class="calc-desc">Evidence-based daily targets for macronutrients, micronutrients, and vitamins based on your physiology.</div>
+        </div>
+        <div class="calc-card" onclick="switchView('macro-calculator')">
+          <div class="calc-title">Nutrient Calculator</div>
+          <div class="calc-desc">Scale a complete nutrient profile from a base serving size to your exact consumption volume.</div>
+        </div>
+        <div class="calc-card" onclick="switchView('daily-tracker')">
+          <div class="calc-title">Daily Tracker</div>
+          <div class="calc-desc">Log intake and monitor progress vs. daily goals with real-time variance analysis.</div>
+        </div>
+        <div class="calc-card" onclick="switchView('bmr-calculator')">
+          <div class="calc-title">BMR Calculator</div>
+          <div class="calc-desc">Clinical caloric intake and TDEE estimation based on physiological parameters.</div>
+        </div>
+        <div class="calc-card" onclick="switchView('bmi-calculator')" style="grid-column: span 2;">
+          <div class="calc-title">BMI Calculator</div>
+          <div class="calc-desc">Body Mass Index classification with visual weight status assessment. Enter height, weight, and sex for a complete breakdown.</div>
+        </div>
+      </div>
+    </div>
+    <div class="right-column-wrapper">
+      <div class="right-column-header">Complete Nutrition Wiki</div>
+      <div class="right-column-scroll" id="right-articles-container"></div>
+    </div>
+  </div>
+</div>
+
+<!-- INTAKE CALCULATOR -->
+<div id="intake-calculator" class="view-section">
+  <button class="back-btn" onclick="switchView('home-dashboard')">&larr; Back to Dashboard</button>
+  <h2>Daily Intake Calculator</h2>
+  <div class="form-container">
+    <div class="row">
+      <div class="field flex1"><label>Age (Years)</label><input type="number" id="in-age" placeholder="e.g. 25" /></div>
+      <div class="field flex1"><label>Biological Sex</label><select id="in-sex"><option value="M">Male</option><option value="F">Female</option></select></div>
+    </div>
+    <div class="row">
+      <div class="field flex1">
+        <label>Body Weight</label>
+        <div class="row">
+          <span class="unit-imperial"><input type="number" id="in-weight-lbs" placeholder="lbs" style="flex:1;" /></span>
+          <span class="unit-metric"><input type="number" id="in-weight-kg" placeholder="kg" style="flex:1;" /></span>
+        </div>
+      </div>
+      <div class="field flex1">
+        <label>Height</label>
+        <div class="row">
+          <span class="unit-imperial"><input type="number" id="in-height-ft" placeholder="Ft" style="flex:1;" /><input type="number" id="in-height-in" placeholder="In" style="flex:1;" /></span>
+          <span class="unit-metric"><input type="number" id="in-height-cm" placeholder="cm" style="flex:1;" /></span>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Activity Level</label>
+      <select id="in-activity">
+        <option value="sedentary">Sedentary (desk job, little movement)</option>
+        <option value="light">Lightly Active (light exercise 1–3 days/week)</option>
+        <option value="moderate" selected>Moderately Active (exercise 3–5 days/week)</option>
+        <option value="active">Very Active (hard exercise 6–7 days/week)</option>
+        <option value="extreme">Extremely Active (athlete / physical job)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Goal</label>
+      <select id="in-goal">
+        <option value="maintain">Maintain Weight</option>
+        <option value="lose">Lose Weight (moderate deficit)</option>
+        <option value="gain">Gain Muscle (moderate surplus)</option>
+      </select>
+    </div>
+    <button class="action-btn" onclick="calcIntakes()">Calculate Daily Targets</button>
+  </div>
+  <div id="in-results" style="margin-top: 20px; max-width: 800px;"></div>
+</div>
+
+<!-- NUTRIENT CALCULATOR -->
+<div id="macro-calculator" class="view-section">
+  <button class="back-btn" onclick="switchView('home-dashboard')">&larr; Back to Dashboard</button>
+  <h2>Nutrient Calculator</h2>
+  <div class="form-container">
+    <div class="field"><label>Item Reference Name</label><input type="text" id="mc-food" placeholder="e.g. Chicken Breast, Raw" /></div>
+    <div class="field">
+      <label>Base Serving (From Label)</label>
+      <div class="row"><input type="number" id="mc-baseAmount" placeholder="Qty" /><select id="mc-baseUnit"><option>g</option><option>oz</option><option>lb</option><option>ml</option><option>cup</option></select></div>
+    </div>
+    <div class="field">
+      <label>Nutrient Profile (Per Base Serving)</label>
+      <div id="mc-macroRows"></div>
+      <button class="action-btn" id="mc-addMacroBtn" onclick="mcAddMacroRow()" style="margin-top:10px; font-size:11px; background:transparent; color:var(--text-main); border-color:var(--border-color);">+ Add Nutrient Field</button>
+    </div>
+    <hr style="border:none; border-top:1px solid var(--border-color); margin:25px 0;">
+    <div class="field">
+      <label>Target Consumption Volume</label>
+      <div class="row"><input type="number" id="mc-eatAmount" placeholder="Qty" /><select id="mc-eatUnit"><option>g</option><option>oz</option><option>lb</option><option>ml</option><option>cup</option></select></div>
+    </div>
+    <button class="action-btn" onclick="mcCalculate()">Calculate Nutrient Yield</button>
+  </div>
+  <div id="mc-results"></div>
+</div>
+
+<!-- DAILY TRACKER -->
+<div id="daily-tracker" class="view-section">
+  <button class="back-btn" onclick="switchView('home-dashboard')">&larr; Back to Dashboard</button>
+  <h2>Daily Tracker Log</h2>
+  <div class="form-container">
+    <div class="field">
+      <label>Daily Target Thresholds</label>
+      <div id="dt-goalsRows"></div>
+      <button class="action-btn" id="dt-addGoalBtn" onclick="dtAddGoal()" style="margin-top:10px; font-size:11px; background:transparent; color:var(--text-main); border-color:var(--border-color);">+ Add Target</button>
+    </div>
+    <hr style="border:none; border-top:1px solid var(--border-color); margin:25px 0;">
+    <div class="field">
+      <label>Consumption Ledger</label>
+      <div id="dt-foodsList"></div>
+      <button class="action-btn" onclick="dtAddFood()" style="margin-top:10px;">+ Log New Entry</button>
+    </div>
+  </div>
+  <div id="dt-remainingSection" style="display:none; margin-top:30px;">
+    <h3 style="font-size:16px; font-weight:700; margin-bottom:10px;">Variance Analysis</h3>
+    <div id="dt-remainingCard" style="margin-top:10px; max-width:800px;"></div>
+  </div>
+</div>
+
+<!-- BMR CALCULATOR -->
+<div id="bmr-calculator" class="view-section">
+  <button class="back-btn" onclick="switchView('home-dashboard')">&larr; Back to Dashboard</button>
+  <h2>BMR & Energy Expenditure</h2>
+  <div class="form-container">
+    <div class="row">
+      <div class="field flex1"><label>Biological Sex</label><select id="bmr-sex"><option value="male">Male</option><option value="female">Female</option></select></div>
+      <div class="field flex1"><label>Age</label><input type="number" id="bmr-age" placeholder="Years" /></div>
+    </div>
+    <div class="row">
+      <div class="field flex1">
+        <label>Weight</label>
+        <span class="unit-imperial"><input type="number" id="bmr-weight-lbs" placeholder="lbs" style="width:100%;" /></span>
+        <span class="unit-metric"><input type="number" id="bmr-weight-kg" placeholder="kg" style="width:100%;" /></span>
+      </div>
+      <div class="field flex1">
+        <label>Height</label>
+        <div class="row">
+          <span class="unit-imperial"><input type="number" id="bmr-heightFt" placeholder="Ft" style="flex:1;" /><input type="number" id="bmr-heightIn" placeholder="In" style="flex:1;" /></span>
+          <span class="unit-metric"><input type="number" id="bmr-height-cm" placeholder="cm" style="flex:1;" /></span>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Activity Multiplier</label>
+      <select id="bmr-activity">
+        <option value="1.0">Base (Resting Metabolic Rate only)</option>
+        <option value="1.2">Sedentary (little to no exercise)</option>
+        <option value="1.375">Lightly Active (1–3 days/week)</option>
+        <option value="1.55">Moderately Active (3–5 days/week)</option>
+        <option value="1.725">Very Active (6–7 days/week)</option>
+        <option value="1.9">Extremely Active (athlete / physical job)</option>
+      </select>
+    </div>
+    <div class="error" id="bmr-errorMsg"></div>
+    <button class="action-btn" onclick="bmrCalculate()">Compute Output</button>
+  </div>
+  <div id="bmr-results"></div>
+</div>
+
+<!-- BMI CALCULATOR -->
+<div id="bmi-calculator" class="view-section">
+  <button class="back-btn" onclick="switchView('home-dashboard')">&larr; Back to Dashboard</button>
+  <h2>BMI Calculator</h2>
+  <div class="form-container">
+    <div class="row">
+      <div class="field flex1">
+        <label>Biological Sex</label>
+        <select id="bmi-sex">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="field flex1">
+        <label>Age</label>
+        <input type="number" id="bmi-age" placeholder="Years" min="2" max="120" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="field flex1">
+        <label>Height</label>
+        <div class="row">
+          <span class="unit-imperial"><input type="number" id="bmi-heightFt" placeholder="Ft" min="1" max="8" style="flex:1;" /><input type="number" id="bmi-heightIn" placeholder="In" min="0" max="11" style="flex:1;" /></span>
+          <span class="unit-metric"><input type="number" id="bmi-height-cm" placeholder="cm" style="flex:1;" /></span>
+        </div>
+      </div>
+      <div class="field flex1">
+        <label>Weight</label>
+        <div class="row">
+          <span class="unit-imperial"><input type="number" id="bmi-weight-lbs" placeholder="lbs" style="flex:1;" /></span>
+          <span class="unit-metric"><input type="number" id="bmi-weight-kg" placeholder="kg" style="flex:1;" /></span>
+        </div>
+      </div>
+    </div>
+    <div class="error" id="bmi-errorMsg"></div>
+    <button class="action-btn" onclick="bmiCalculate()">Compute BMI</button>
+  </div>
+  <div id="bmi-results" style="margin-top: 24px; max-width: 800px;"></div>
+</div>
+
+<!-- ARTICLE READER -->
+<div id="article-reader" class="view-section">
+  <button class="back-btn" onclick="switchView('home-dashboard')">&larr; Back to Wiki</button>
+  <h2 id="reader-title"></h2>
+  <div id="reader-content" class="article-content"></div>
+</div>
+
+<script>
+/* ─── SETTINGS OVERLAY ─── */
+let settingsOpen = false;
+
+function toggleSettings() {
+  settingsOpen = !settingsOpen;
+  const overlay = document.getElementById('settingsOverlay');
+  const cogBtn  = document.getElementById('settingsCogBtn');
+  overlay.classList.toggle('visible', settingsOpen);
+  cogBtn.classList.toggle('open', settingsOpen);
+}
+
+function closeSettings() {
+  settingsOpen = false;
+  document.getElementById('settingsOverlay').classList.remove('visible');
+  document.getElementById('settingsCogBtn').classList.remove('open');
+}
+
+function handleOverlayClick(e) {
+  if (e.target.classList.contains('settings-backdrop') || e.target === document.getElementById('settingsOverlay')) {
+    closeSettings();
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && settingsOpen) closeSettings();
+});
+
+/* ─── THEME ─── */
+let currentTheme = 'light';
+function setTheme(theme) {
+  currentTheme = theme;
+  document.body.classList.toggle('dark', theme === 'dark');
+  document.getElementById('theme-light').classList.toggle('active', theme === 'light');
+  document.getElementById('theme-dark').classList.toggle('active',  theme === 'dark');
+}
+
+/* ─── FONT ─── */
+const FONT_STACKS = {
+  system: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+  inter:  "'Inter', -apple-system, sans-serif",
+  mono:   "'JetBrains Mono', 'Fira Code', 'Courier New', monospace",
+  serif:  "Georgia, 'Times New Roman', serif"
+};
+let currentFont = 'system';
+
+function setFont(fontKey) {
+  currentFont = fontKey;
+  document.body.style.fontFamily = FONT_STACKS[fontKey];
+  document.querySelectorAll('.font-option').forEach(el => {
+    el.classList.toggle('active', el.id === 'font-' + fontKey);
+  });
+  // Load Inter from Google Fonts on demand
+  if (fontKey === 'inter' && !document.getElementById('font-inter-link')) {
+    const link = document.createElement('link');
+    link.id   = 'font-inter-link';
+    link.rel  = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap';
+    document.head.appendChild(link);
+  }
+  if (fontKey === 'mono' && !document.getElementById('font-mono-link')) {
+    const link = document.createElement('link');
+    link.id   = 'font-mono-link';
+    link.rel  = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap';
+    document.head.appendChild(link);
+  }
+}
+
+/* ─── UNIT SYSTEM ─── */
+let unitSystem = 'imperial'; // 'imperial' | 'metric'
+
+function setUnitSystem(sys) {
+  unitSystem = sys;
+  document.body.classList.remove('imperial', 'metric');
+  document.body.classList.add(sys);
+  document.getElementById('btn-imperial').classList.toggle('active', sys === 'imperial');
+  document.getElementById('btn-metric').classList.toggle('active', sys === 'metric');
+  // Clear any stale results when switching systems
+  ['in-results','bmr-results','bmi-results'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = '';
+  });
+}
+
+// Helper: get weight in kg from whichever inputs are active
+function getWeightKg(lbsId, kgId) {
+  if (unitSystem === 'imperial') {
+    const v = parseFloat(document.getElementById(lbsId).value);
+    return isNaN(v) ? NaN : v / 2.20462;
+  } else {
+    return parseFloat(document.getElementById(kgId).value);
+  }
+}
+
+// Helper: get height in cm from whichever inputs are active
+function getHeightCm(ftId, inId, cmId) {
+  if (unitSystem === 'imperial') {
+    const ft  = parseFloat(document.getElementById(ftId).value)  || 0;
+    const inc = parseFloat(document.getElementById(inId).value)  || 0;
+    return ((ft * 12) + inc) * 2.54;
+  } else {
+    return parseFloat(document.getElementById(cmId).value) || 0;
+  }
+}
+
+// Initialize on load
+setUnitSystem('imperial');
+setTheme('light');
+
+/* ─── VIEW SWITCHING ─── */
+function showView(viewId) {
+  document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+  document.getElementById(viewId).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function switchView(viewId) {
+  // Push a new history entry so the browser back button works
+  history.pushState({ view: viewId }, '', '#' + viewId);
+  showView(viewId);
+}
+
+// Handle browser back / forward
+window.addEventListener('popstate', function(e) {
+  const viewId = (e.state && e.state.view) ? e.state.view : 'home-dashboard';
+  showView(viewId);
+});
+
+// On first load, seed the history stack with the current view (home)
+(function() {
+  const initial = 'home-dashboard';
+  history.replaceState({ view: initial }, '', '#' + initial);
+  showView(initial);
+})();
+
+/* ─── WIKI LINK MAP ─── */
+const TOPIC_ARTICLE_MAP = {
+  "protein": "art-protein",
+  "carbohydrates": "art-carbs", "carbs": "art-carbs",
+  "dietary fats": "art-fats", "fat": "art-fats", "fats": "art-fats",
+  "dietary fiber": "art-fiber", "fiber": "art-fiber",
+  "calcium": "art-calcium",
+  "sodium": "art-sodium",
+  "zinc": "art-zinc",
+  "iron": "art-iron",
+  "magnesium": "art-magnesium",
+  "potassium": "art-potassium",
+  "vitamin a": "art-vita",
+  "vitamin c": "art-vitc",
+  "vitamin d": "art-vitd",
+  "vitamin e": "art-vite",
+  "vitamin k": "art-vitk",
+  "vitamin b6": "art-b6",
+  "vitamin b12": "art-b12",
+  "folate": "art-folate", "folate (b9)": "art-folate", "b9": "art-folate",
+  "calories": "art-calories"
+};
+
+function formatWikiLink(displayName, topicKey) {
+  const key = (topicKey || displayName).toLowerCase();
+  const artId = TOPIC_ARTICLE_MAP[key];
+  if (artId) return `<a class="wiki-link" onclick="openArticle('${artId}')">${displayName}</a>`;
+  return displayName;
+}
+
+/* ─── ARTICLES ─── */
+const ARTICLES = [
+  {
+    id: 'art-calories',
+    title: 'Calories',
+    summary: 'The fundamental unit of metabolic energy intake.',
+    content: `
+      <h3>What Are Calories?</h3>
+      <p>A calorie (kilocalorie, kcal) is a unit of energy. In nutrition, it measures the amount of chemical energy released when your body metabolizes food. Everything your body does: breathing, thinking, moving, repairing tissue, ect, requires a continuous supply of energy, and calories are how we quantify it. Calories come from three macronutrients: protein (4 kcal/g), carbohydrates (4 kcal/g), and fat (9 kcal/g). Alcohol also contributes 7 kcal/g.</p>
+      <h3>What Do Calories Do?</h3>
+      <p>Calories fuel every physiological process. Your brain consumes roughly 20% of your daily caloric budget at rest. Your heart, lungs, kidneys, and liver collectively demand enormous amounts of energy just to maintain baseline function. Beyond organ maintenance, calories power physical movement, thermogenesis (heat production), and the anabolic processes of building muscle and repairing cells.</p>
+      <h3>Energy Balance</h3>
+      <p>The relationship between calories consumed and calories expended governs body composition over time. A consistent caloric surplus results in weight gain; a deficit produces weight loss. Neither is inherently good or bad. The goal determines the target. The quality of calories matters too: 500 kcal from whole foods behaves differently metabolically than 500 kcal from processed sugar.</p>
+      <h3>How to Calculate Your Daily Caloric Needs</h3>
+      <p>The gold standard is to calculate Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation, then multiply by an activity factor (TDEE).</p>
+      <h4>Mifflin-St Jeor (Ages &lt; 65)</h4>
+      <ul>
+        <li>Men: BMR = (10 × weight in kg) + (6.25 × height in cm) − (5 × age) + 5</li>
+        <li>Women: BMR = (10 × weight in kg) + (6.25 × height in cm) − (5 × age) − 161</li>
+      </ul>
+      <h4>Activity Multipliers (TDEE = BMR × Factor)</h4>
+      <ul>
+        <li>Sedentary (desk job): × 1.2</li>
+        <li>Lightly active (1–3 days/week): × 1.375</li>
+        <li>Moderately active (3–5 days/week): × 1.55</li>
+        <li>Very active (6–7 days/week): × 1.725</li>
+        <li>Extremely active (athlete/physical labor): × 1.9</li>
+      </ul>
+      <p>Use the BMR Calculator tool on this platform for a precise computed output. Adjust ±250–500 kcal from TDEE for weight loss or muscle gain goals.</p>
+    `
+  },
+  {
+    id: 'art-protein',
+    title: 'Protein',
+    summary: 'Amino acid synthesis, muscle repair, and enzymatic function.',
+    content: `
+      <h3>What Is Protein?</h3>
+      <p>Protein is one of the three primary macronutrients and is composed of chains of amino acids or the fundamental molecular building blocks of biological tissue. There are 20 amino acids in total: 9 are essential (your body cannot synthesize them and must obtain them from food), and 11 are non-essential (synthesized internally). Animal sources, meat, fish, eggs, dairy, are "complete proteins" containing all 9 essential amino acids in adequate ratios. Many plant sources are incomplete and must be strategically combined.</p>
+      <h3>What Does Protein Do?</h3>
+      <p>Protein is the primary substrate for muscle protein synthesis (MPS), the biological process by which muscle fibers are repaired and grown following mechanical stress. Beyond muscle, protein is essential for: production of enzymes and hormones (including insulin and IGF-1), antibody formation (immune defense), oxygen transport via hemoglobin, and structural integrity of skin, hair, nails, and connective tissue.</p>
+      <h3>Purpose in Nutrition</h3>
+      <p>From a nutritional standpoint, adequate protein intake prevents muscle catabolism (the breakdown of muscle for gluconeogenesis during energy deficit), supports satiety (protein is the most satiating macronutrient), and drives body recomposition. Protein has a high thermic effect. Approximately 25–30% of its caloric value is expended in digestion alone.</p>
+      <h3>How to Calculate Your Daily Protein Needs</h3>
+      <h4>Sedentary (General Health)</h4>
+      <ul>
+        <li>Minimum: 0.8g per kg of body weight (RDA)</li>
+      </ul>
+      <h4>Active / Athletic</h4>
+      <ul>
+        <li>Muscle retention: 1.2–1.6g/kg</li>
+        <li>Hypertrophy (muscle building): 1.6–2.2g/kg</li>
+        <li>Aggressive recomposition: up to 2.4g/kg</li>
+      </ul>
+      <h4>Practical Formula</h4>
+      <ul>
+        <li>In pounds: multiply body weight (lbs) × 0.7 to 1.0 for active individuals</li>
+        <li>In kg: multiply body weight (kg) × 1.6 to 2.2 for hypertrophy</li>
+      </ul>
+      <p>Distribute protein evenly across 3–5 meals. A single feeding of ~0.4g/kg body weight (~25–40g) maximizes MPS per meal via the leucine threshold mechanism.</p>
+    `
+  },
+  {
+    id: 'art-carbs',
+    title: 'Carbohydrates',
+    summary: 'Primary fuel for glycolytic activity and brain function.',
+    content: `
+      <h3>What Are Carbohydrates?</h3>
+      <p>Carbohydrates are organic compounds composed of carbon, hydrogen, and oxygen, classified into simple sugars (monosaccharides and disaccharides) and complex carbohydrates (polysaccharides like starch and glycogen). They are the body's preferred and most efficiently metabolized energy substrate, especially during high-intensity exercise. Dietary carbohydrates are broken down into glucose, which enters circulation and is stored as glycogen in the liver and skeletal muscle.</p>
+      <h3>What Do Carbohydrates Do?</h3>
+      <p>Carbohydrates serve as the dominant fuel for the glycolytic energy system, which powers anaerobic efforts such as weightlifting, sprinting, and HIIT. The brain also relies almost exclusively on glucose, consuming ~120g/day under normal conditions. Muscle glycogen is directly correlated with force output, depleted glycogen stores reduce strength and endurance performance significantly. Insulin release following carbohydrate ingestion is strongly anti-catabolic, suppressing muscle protein breakdown.</p>
+      <h3>How to Calculate Daily Carbohydrate Needs</h3>
+      <h4>General Population</h4>
+      <ul>
+        <li>45–65% of total daily caloric intake (AMDR per DRI guidelines)</li>
+        <li>Minimum: 130g/day to supply adequate glucose to the brain (AI for adults)</li>
+      </ul>
+      <h4>Active / Athletic (Evidence-Based Ranges)</h4>
+      <ul>
+        <li>Moderate training (1 hr/day): 5–7g per kg of body weight</li>
+        <li>High volume training: 6–10g per kg of body weight</li>
+        <li>Elite endurance athletes: up to 10–12g/kg</li>
+      </ul>
+      <h4>Practical Formula</h4>
+      <ul>
+        <li>After setting protein and fat targets, fill remaining calories with carbohydrates: Carb calories = TDEE − (Protein kcal + Fat kcal); Carb grams = Carb calories ÷ 4</li>
+      </ul>
+      <p>Prioritize complex, whole-food sources (oats, rice, sweet potato, legumes) for sustained energy. Reserve simple sugars for peri-workout windows where rapid glycogen replenishment is beneficial.</p>
+    `
+  },
+  {
+    id: 'art-fats',
+    title: 'Fats',
+    summary: 'Hormonal synthesis, cell membrane integrity, and fat-soluble vitamin absorption.',
+    content: `
+      <h3>What Are Dietary Fats?</h3>
+      <p>Dietary fats (lipids) are a macronutrient class comprising triglycerides, phospholipids, and sterols. Triglycerides, three fatty acids bonded to a glycerol backbone, are the primary form. Fatty acids are classified by saturation: saturated (no double bonds, solid at room temperature), monounsaturated (one double bond), and polyunsaturated (multiple double bonds, including omega-3 and omega-6 fatty acids). Trans fats are artificially hydrogenated and should be minimized.</p>
+      <h3>What Do Dietary Fats Do?</h3>
+      <p>Fats are critical for: steroid hormone biosynthesis (testosterone, estrogen, cortisol are all derived from cholesterol), cell membrane phospholipid bilayer structure and fluidity, absorption of fat-soluble vitamins (A, D, E, K), myelin sheath production around nerves, and serving as the dominant fuel source during low-intensity, aerobic activity.</p>
+      <h3>How to Calculate Daily Fat Needs</h3>
+      <h4>General Population (DRI/AMDR)</h4>
+      <ul>
+        <li>20–35% of total daily caloric intake</li>
+        <li>Minimum: ~0.5g per kg body weight to preserve hormonal function</li>
+      </ul>
+      <h4>Active / Athletic</h4>
+      <ul>
+        <li>Conservative floor: 0.5–0.7g per kg of body weight</li>
+        <li>Optimal range for hormone support: 0.7–1.0g per kg of body weight</li>
+        <li>Never drop below 15% of total calories from fat — critical hormonal compromise occurs below this threshold</li>
+      </ul>
+      <h4>Practical Formula</h4>
+      <ul>
+        <li>Fat grams = (TDEE × 0.25) ÷ 9 (using 25% of calories from fat as a starting point)</li>
+      </ul>
+      <p>Prioritize unsaturated sources: olive oil, avocado, fatty fish (EPA/DHA), nuts, and seeds. Keep saturated fat under 10% of total calories and trans fats as near zero as possible.</p>
+    `
+  },
+  {
+    id: 'art-fiber',
+    title: 'Dietary Fiber',
+    summary: 'Gut microbiome, glycemic control, and gastrointestinal motility.',
+    content: `
+      <h3>What Is Dietary Fiber?</h3>
+      <p>Dietary fiber is the indigestible portion of plant-based foods, primarily complex carbohydrates and lignins that human digestive enzymes cannot break down. Fiber is classified into two types: soluble fiber (dissolves in water, forming a gel-like substance; found in oats, legumes, apples) and insoluble fiber (does not dissolve; found in whole wheat, nuts, vegetables). Both types are essential and perform distinct physiological roles.</p>
+      <h3>What Does Fiber Do?</h3>
+      <p>Soluble fiber slows gastric emptying, blunts post-meal blood glucose spikes (lowering glycemic load), and is fermented by gut microbiota into short-chain fatty acids (SCFAs) like butyrate, which fuel colonocytes and reduce systemic inflammation. Insoluble fiber accelerates intestinal transit, adds bulk to stool, and reduces the risk of constipation, diverticulosis, and colorectal cancer. Adequate fiber intake is strongly associated with reduced cardiovascular disease risk, improved insulin sensitivity, and healthier gut microbiome diversity.</p>
+      <h3>How to Calculate Daily Fiber Needs</h3>
+      <h4>Standard DRI Targets (Age 19–50)</h4>
+      <ul>
+        <li>Men: 38g/day</li>
+        <li>Women: 25g/day</li>
+      </ul>
+      <h4>Age-Adjusted Targets</h4>
+      <ul>
+        <li>Men 51+: 30g/day</li>
+        <li>Women 51+: 21g/day</li>
+      </ul>
+      <h4>Calorie-Scaled Formula</h4>
+      <ul>
+        <li>14g of fiber per 1,000 kcal consumed (Academy of Nutrition and Dietetics guideline)</li>
+        <li>Example: 2,500 kcal diet → 35g fiber/day</li>
+      </ul>
+      <p>Increase fiber intake gradually (over 2–4 weeks) to avoid bloating and gas. Pair with adequate water intake — fiber requires water to perform optimally.</p>
+    `
+  },
+  {
+    id: 'art-calcium',
+    title: 'Calcium',
+    summary: 'Skeletal integrity, muscular contraction, and nerve signaling.',
+    content: `
+      <h3>What Is Calcium?</h3>
+      <p>Calcium is the most abundant mineral in the human body, with approximately 99% stored in bones and teeth as hydroxyapatite crystals, providing structural rigidity. The remaining 1% circulates in the blood and intracellular fluid, where it performs a vast range of critical signaling functions. Serum calcium is tightly regulated by parathyroid hormone (PTH), calcitonin, and the active form of vitamin D (calcitriol).</p>
+      <h3>What Does Calcium Do?</h3>
+      <p>Calcium's roles extend far beyond bone health. It is the central ion of the sliding filament theory of muscle contraction: when a motor neuron fires, calcium ions flood into the muscle cell, binding to troponin to expose actin-myosin binding sites, enabling contraction. It also participates in neurotransmitter release at synaptic terminals, activates clotting factors in the coagulation cascade, and plays a role in cell membrane permeability and enzyme activation.</p>
+      <h3>How to Calculate Daily Calcium Needs</h3>
+      <h4>DRI / RDA by Age Group</h4>
+      <ul>
+        <li>Adults 19–50: 1,000mg/day</li>
+        <li>Men 51–70: 1,000mg/day</li>
+        <li>Women 51–70: 1,200mg/day</li>
+        <li>Adults 71+: 1,200mg/day</li>
+        <li>Pregnant/Lactating (19–50): 1,000mg/day</li>
+        <li>Tolerable Upper Intake Level (UL): 2,000–2,500mg/day</li>
+      </ul>
+      <p>Absorption is enhanced by adequate vitamin D and reduced by excessive sodium, caffeine, and oxalate-rich foods (spinach, rhubarb). Calcium carbonate is best absorbed with food; calcium citrate can be taken with or without food. Spread doses across meals, absorption efficiency drops significantly above 500mg per sitting.</p>
+    `
+  },
+  {
+    id: 'art-sodium',
+    title: 'Sodium',
+    summary: 'Fluid balance, nerve impulse transmission, and muscle contraction.',
+    content: `
+      <h3>What Is Sodium?</h3>
+      <p>Sodium is the primary extracellular cation (positively charged ion), responsible for maintaining osmotic pressure and fluid balance outside cells. It is consumed primarily as sodium chloride (table salt), but also occurs in processed foods, cured meats, bread, and condiments. The body tightly regulates sodium levels through the renin-angiotensin-aldosterone system (RAAS) and antidiuretic hormone (ADH), adjusting kidney retention and excretion dynamically.</p>
+      <h3>What Does Sodium Do?</h3>
+      <p>Sodium's primary roles include: maintaining the electrochemical gradient across cell membranes (the foundation of the action potential in nerves and muscles), co-transporting glucose and amino acids into cells via sodium-glucose linked transporters (SGLTs) and sodium-coupled amino acid transporters, regulating extracellular fluid volume (affecting blood pressure), and facilitating renal bicarbonate reabsorption for acid-base balance.</p>
+      <h3>How to Calculate Daily Sodium Needs</h3>
+      <h4>Dietary Guidelines (FDA / AHA)</h4>
+      <ul>
+        <li>General Population: &lt; 2,300mg/day</li>
+        <li>High-risk (hypertension, kidney disease): &lt; 1,500mg/day</li>
+        <li>Minimum adequate intake: ~500mg/day (covers obligatory losses)</li>
+      </ul>
+      <h4>Athletes and Heavy Sweaters</h4>
+      <ul>
+        <li>Endurance athletes may lose 900–2,300mg sodium per liter of sweat</li>
+        <li>Adjust upward during prolonged exercise (&gt;1 hour), heat exposure, or high sweat rate</li>
+        <li>Practical athlete range: 2,000–4,000mg/day, titrated to sweat loss</li>
+      </ul>
+      <p>Most people consume well above the recommended limit through processed foods. Focus on whole-food sources to manage intake, and remember that adequate sodium is essential, hyponatremia (dangerously low sodium) is a real risk for heavy exercisers who over-hydrate without replacing electrolytes.</p>
+    `
+  },
+  {
+    id: 'art-zinc',
+    title: 'Zinc',
+    summary: 'Testosterone synthesis, immune function, and cell division.',
+    content: `
+      <h3>What Is Zinc?</h3>
+      <p>Zinc is an essential trace mineral serving as a structural component or catalytic cofactor in over 300 enzymes. It cannot be stored in large quantities in the body, making consistent daily intake critical. Zinc is found in highest concentrations in oysters, red meat, poultry, beans, nuts, and fortified cereals. Bioavailability varies: zinc from animal sources is significantly more bioavailable than from plant sources due to phytate inhibition.</p>
+      <h3>What Does Zinc Do?</h3>
+      <p>Zinc is essential for: DNA and RNA synthesis (required for every cell division), immune cell development and function (T-cell differentiation, natural killer cell activity), wound healing and tissue repair, testosterone biosynthesis (zinc deficiency is strongly correlated with suppressed testosterone levels), taste and smell perception via gustin (a zinc-dependent protein), and the antioxidant enzyme copper-zinc superoxide dismutase (CuZnSOD).</p>
+      <h3>How to Calculate Daily Zinc Needs</h3>
+      <h4>RDA by Group</h4>
+      <ul>
+        <li>Adult Men: 11mg/day</li>
+        <li>Adult Women: 8mg/day</li>
+        <li>Pregnant Women: 11–13mg/day</li>
+        <li>Lactating Women: 12–13mg/day</li>
+        <li>Upper Tolerable Limit: 40mg/day (chronic excess disrupts copper absorption)</li>
+      </ul>
+      <h4>Athletes / High Training Load</h4>
+      <ul>
+        <li>Zinc is lost through sweat; athletes may need 30–40% more than the RDA</li>
+        <li>Practical supplementation (if dietary intake is insufficient): 15–30mg elemental zinc/day</li>
+      </ul>
+      <p>If supplementing, take zinc away from meals containing high phytate foods (legumes, whole grains) or calcium supplements, which compete for absorption. Zinc picolinate and zinc bisglycinate have superior bioavailability compared to zinc oxide.</p>
+    `
+  },
+  {
+    id: 'art-iron',
+    title: 'Iron',
+    summary: 'Hemoglobin synthesis, oxygen transport, and energy metabolism.',
+    content: `
+      <h3>What Is Iron?</h3>
+      <p>Iron is a transition metal and essential mineral that exists in two dietary forms: heme iron (found in animal products, primarily bound within hemoglobin and myoglobin) and non-heme iron (found in plants, grains, and legumes, and in a less bioavailable form). Heme iron is absorbed at 15–35% efficiency; non-heme iron at only 2–20%, heavily influenced by dietary context.</p>
+      <h3>What Does Iron Do?</h3>
+      <p>Iron is the central atom of the heme group in hemoglobin (red blood cells) and myoglobin (muscle cells), enabling oxygen binding and transport. Without adequate iron, the body cannot produce sufficient red blood cells, leading to iron-deficiency anemia, characterized by fatigue, reduced aerobic capacity, cognitive impairment, and impaired immune function. Iron is also critical for: mitochondrial electron transport chain enzymes (cytochromes), DNA synthesis, and the function of numerous iron-dependent enzymes.</p>
+      <h3>How to Calculate Daily Iron Needs</h3>
+      <h4>RDA by Group</h4>
+      <ul>
+        <li>Adult Men (19+): 8mg/day</li>
+        <li>Adult Women (19–50): 18mg/day (accounts for menstrual losses)</li>
+        <li>Adult Women (51+): 8mg/day</li>
+        <li>Pregnant Women: 27mg/day</li>
+        <li>Upper Tolerable Limit: 45mg/day</li>
+      </ul>
+      <h4>Athletes</h4>
+      <ul>
+        <li>Endurance athletes (especially female runners): may need 30–70% more due to foot-strike hemolysis, sweat losses, and GI microbleeding</li>
+      </ul>
+      <p>Enhance non-heme iron absorption by consuming it alongside vitamin C-rich foods. Avoid pairing iron intake with calcium supplements, coffee, tea, or high-phytate foods, which inhibit absorption. Ferrous sulfate and ferrous gluconate supplements are well-absorbed; take on an empty stomach if tolerated.</p>
+    `
+  },
+  {
+    id: 'art-magnesium',
+    title: 'Magnesium',
+    summary: 'ATP stabilization, enzymatic cofactor, and nervous system recovery.',
+    content: `
+      <h3>What Is Magnesium?</h3>
+      <p>Magnesium is the fourth most abundant mineral in the body and the second most abundant intracellular cation (after potassium). Approximately 60% is stored in bone, 39% in muscle and soft tissue, and 1% in blood. Most dietary magnesium is found in leafy green vegetables, nuts, seeds, legumes, whole grains, and dark chocolate. It is an essential cofactor in over 300 enzymatic reactions.</p>
+      <h3>What Does Magnesium Do?</h3>
+      <p>Magnesium is required for: ATP synthesis and stabilization (it binds to ATP to form the biologically active Mg-ATP complex), protein synthesis at the ribosomal level, DNA and RNA synthesis, muscle and nerve function (regulates calcium channels and the NMDA receptor), blood glucose control (cofactor for insulin receptor function), and blood pressure regulation (promotes vasodilation). Low magnesium is associated with muscle cramps, poor sleep, increased anxiety, and higher rates of cardiovascular disease.</p>
+      <h3>How to Calculate Daily Magnesium Needs</h3>
+      <h4>RDA by Group</h4>
+      <ul>
+        <li>Adult Men (19–30): 400mg/day</li>
+        <li>Adult Men (31+): 420mg/day</li>
+        <li>Adult Women (19–30): 310mg/day</li>
+        <li>Adult Women (31+): 320mg/day</li>
+        <li>Pregnant Women: 350–360mg/day</li>
+        <li>Upper Tolerable Limit (supplemental only): 350mg/day (excess causes osmotic diarrhea)</li>
+      </ul>
+      <h4>Athletes</h4>
+      <ul>
+        <li>Athletes lose magnesium through sweat; estimated additional need: 10–20% above RDA</li>
+        <li>Practical supplement range: 200–400mg elemental magnesium (as glycinate or malate for best tolerance)</li>
+      </ul>
+    `
+  },
+  {
+    id: 'art-potassium',
+    title: 'Potassium',
+    summary: 'Intracellular fluid balance, nerve signaling, and heart rhythm.',
+    content: `
+      <h3>What Is Potassium?</h3>
+      <p>Potassium is the primary intracellular cation, with approximately 98% of the body's 120g of total potassium residing inside cells. It works in opposition to sodium across the cell membrane via the sodium-potassium ATPase pump (Na⁺/K⁺-ATPase), a fundamental mechanism that consumes approximately 30% of the body's total resting energy expenditure. Rich dietary sources include bananas, potatoes, avocado, leafy greens, beans, and fish.</p>
+      <h3>What Does Potassium Do?</h3>
+      <p>Potassium is essential for: maintaining the resting membrane potential of cells (the −70mV gradient that enables nerve and muscle function), cardiac rhythm, potassium regulates heart rate and prevents arrhythmias, skeletal muscle contraction and relaxation (potassium re-enters cells after an action potential to restore resting potential), kidney function (facilitates bicarbonate reabsorption), and counteracting sodium's blood pressure-raising effects (higher potassium intake is strongly associated with lower blood pressure).</p>
+      <h3>How to Calculate Daily Potassium Needs</h3>
+      <h4>Adequate Intake (AI) — No formal RDA established</h4>
+      <ul>
+        <li>Adult Men: 3,400mg/day</li>
+        <li>Adult Women: 2,600mg/day</li>
+        <li>Pregnant Women: 2,900mg/day</li>
+        <li>Lactating Women: 2,800mg/day</li>
+        <li>No established UL for dietary potassium in healthy individuals (kidneys excrete excess efficiently)</li>
+      </ul>
+      <h4>Athletes</h4>
+      <ul>
+        <li>Sweat losses typically 150–500mg per hour of intense exercise; replenish with potassium-rich foods post-workout</li>
+      </ul>
+      <p>Potassium supplements above 99mg are regulated due to GI and cardiac risk in people with kidney impairment, always prioritize whole food sources. People on ACE inhibitors or potassium-sparing diuretics should monitor intake carefully.</p>
+    `
+  },
+  {
+    id: 'art-vita',
+    title: 'Vitamin A',
+    summary: 'Vision, immune defense, cell differentiation, and skin integrity.',
+    content: `
+      <h3>What Is Vitamin A?</h3>
+      <p>Vitamin A is a fat-soluble vitamin that exists in two primary dietary forms: preformed vitamin A (retinol and retinyl esters, found in animal products like liver, dairy, and eggs) and provitamin A carotenoids (primarily beta-carotene, found in orange and yellow vegetables, leafy greens). Carotenoids are converted to retinol in the intestinal wall, though conversion efficiency varies significantly between individuals and food preparations.</p>
+      <h3>What Does Vitamin A Do?</h3>
+      <p>Vitamin A's physiological roles include: vision, retinal (the aldehyde form of vitamin A) is a component of rhodopsin in rod photoreceptors, enabling low-light vision; immune function, vitamin A maintains the integrity of mucosal epithelial barriers (gut, lungs, skin), which are the first line of defense against pathogens, and promotes differentiation of immune cells; cell differentiation, retinoic acid is a powerful signaling molecule that regulates gene expression during embryonic development, tissue maintenance, and spermatogenesis; and skin health, retinoids regulate keratinocyte turnover and sebum production.</p>
+      <h3>How to Calculate Daily Vitamin A Needs</h3>
+      <h4>RDA (expressed as Retinol Activity Equivalents, RAE)</h4>
+      <ul>
+        <li>Adult Men: 900 mcg RAE/day</li>
+        <li>Adult Women: 700 mcg RAE/day</li>
+        <li>Pregnant Women: 770 mcg RAE/day</li>
+        <li>Lactating Women: 1,300 mcg RAE/day</li>
+        <li>Upper Tolerable Limit: 3,000 mcg RAE/day (preformed; toxicity from carotenoids is extremely rare)</li>
+      </ul>
+      <p>1 mcg RAE = 1 mcg retinol = 12 mcg beta-carotene = 24 mcg other provitamin A carotenoids. Fat-soluble: consume with dietary fat to maximize absorption. Excess preformed vitamin A (retinol) is teratogenic during pregnancy, pregnant individuals should avoid high-dose retinol supplements and liver consumption.</p>
+    `
+  },
+  {
+    id: 'art-vitc',
+    title: 'Vitamin C',
+    summary: 'Collagen synthesis, antioxidant defense, and iron absorption.',
+    content: `
+      <h3>What Is Vitamin C?</h3>
+      <p>Vitamin C (ascorbic acid) is a water-soluble vitamin and the most abundant antioxidant in human plasma. Unlike most mammals, humans cannot synthesize vitamin C endogenously (due to the loss of the GULOP gene) and must obtain it entirely through diet. It is found in high concentrations in citrus fruits, kiwi, bell peppers, strawberries, broccoli, and brussels sprouts. Being water-soluble, excess vitamin C is readily excreted renally, making toxicity uncommon at reasonable doses.</p>
+      <h3>What Does Vitamin C Do?</h3>
+      <p>Vitamin C is essential for: collagen synthesis, it is required for the hydroxylation of proline and lysine residues in procollagen, a step critical for the triple helix structure of mature collagen, making it mandatory for tendon, ligament, skin, and vascular wall integrity; antioxidant function, scavenges reactive oxygen species (ROS) and regenerates vitamin E from its oxidized form; immune function, supports neutrophil chemotaxis, phagocytosis, and lymphocyte proliferation; iron absorption, dramatically enhances non-heme iron absorption (by reducing Fe³⁺ to the more absorbable Fe²⁺ form); and neurotransmitter synthesis (dopamine, norepinephrine, and L-carnitine biosynthesis all require vitamin C).</p>
+      <h3>How to Calculate Daily Vitamin C Needs</h3>
+      <h4>RDA</h4>
+      <ul>
+        <li>Adult Men: 90mg/day</li>
+        <li>Adult Women: 75mg/day</li>
+        <li>Pregnant Women: 85mg/day</li>
+        <li>Lactating Women: 120mg/day</li>
+        <li>Smokers: add 35mg/day (smoking dramatically depletes ascorbate)</li>
+        <li>Upper Tolerable Limit: 2,000mg/day (excess causes osmotic diarrhea and GI distress)</li>
+      </ul>
+      <h4>Optimal Ranges</h4>
+      <ul>
+        <li>For immune support and antioxidant saturation: 200–500mg/day is considered optimal by many researchers, above this, absorption efficiency declines sharply</li>
+      </ul>
+    `
+  },
+  {
+    id: 'art-vitd',
+    title: 'Vitamin D',
+    summary: 'Calcium homeostasis, bone remodeling, and immune modulation.',
+    content: `
+      <h3>What Is Vitamin D?</h3>
+      <p>Vitamin D is technically a secosteroid hormone rather than a traditional vitamin, because the body can synthesize it endogenously when skin is exposed to ultraviolet B (UVB) radiation from sunlight. The two major dietary forms are D2 (ergocalciferol, from fungi/yeast) and D3 (cholecalciferol, from fatty fish, egg yolks, and fortified foods). D3 is significantly more potent at raising serum 25-hydroxyvitamin D [25(OH)D] levels. Both forms require activation: first in the liver (to 25-OH-D) and then in the kidneys (to the active 1,25-dihydroxyvitamin D, or calcitriol).</p>
+      <h3>What Does Vitamin D Do?</h3>
+      <p>Calcitriol (active vitamin D) acts on vitamin D receptors (VDR) found in nearly every tissue in the body. Key functions include: calcium and phosphorus absorption in the gut (essential for bone mineralization), bone remodeling (regulates osteoblast and osteoclast activity), immune modulation (vitamin D deficiency is linked to increased susceptibility to respiratory infections, autoimmune disease, and certain cancers), muscle function (VDRs in skeletal muscle tissue; deficiency linked to proximal muscle weakness), and cardiovascular health (regulates blood pressure via the renin-angiotensin system).</p>
+      <h3>How to Calculate Daily Vitamin D Needs</h3>
+      <h4>RDA (as Cholecalciferol / D3)</h4>
+      <ul>
+        <li>Adults 19–70: 600 IU (15 mcg)/day</li>
+        <li>Adults 71+: 800 IU (20 mcg)/day</li>
+        <li>Pregnant/Lactating: 600 IU/day</li>
+        <li>Upper Tolerable Limit: 4,000 IU/day (toxicity causes hypercalcemia)</li>
+      </ul>
+      <h4>Research-Supported Optimal Range</h4>
+      <ul>
+        <li>Many endocrinologists and researchers recommend 1,500–2,000 IU/day for adults without sun exposure</li>
+        <li>Target serum 25(OH)D: 40–60 ng/mL for optimal function</li>
+        <li>Supplemental dose of 1,000–4,000 IU D3/day is commonly used to achieve and maintain target levels</li>
+      </ul>
+      <p>Test serum 25(OH)D levels to guide supplementation. Fat-soluble: take with the largest meal of the day for maximum absorption.</p>
+    `
+  },
+  {
+    id: 'art-vite',
+    title: 'Vitamin E',
+    summary: 'Lipid peroxidation defense and immune cell membrane integrity.',
+    content: `
+      <h3>What Is Vitamin E?</h3>
+      <p>Vitamin E is a family of eight fat-soluble compounds: four tocopherols (alpha, beta, gamma, delta) and four tocotrienols. Alpha-tocopherol is the form most biologically active in humans and the one preferentially maintained in plasma. It is found in highest concentrations in wheat germ oil, sunflower seeds, almonds, hazelnuts, and peanut butter. As a fat-soluble vitamin, it requires dietary fat for absorption and is stored in adipose tissue and the liver.</p>
+      <h3>What Does Vitamin E Do?</h3>
+      <p>Vitamin E's primary biological role is as a chain-breaking antioxidant that protects polyunsaturated fatty acids (PUFAs) in cell membranes and lipoproteins from oxidative damage (lipid peroxidation). It works synergistically with vitamin C, after donating an electron to neutralize a free radical, oxidized vitamin E (the tocopheroxyl radical) is regenerated by vitamin C. Additional roles include: immune function (supports T-cell proliferation and natural killer cell activity), inhibition of platelet aggregation (anti-thrombotic effect), and protection of LDL particles from oxidation, relevant to cardiovascular disease risk.</p>
+      <h3>How to Calculate Daily Vitamin E Needs</h3>
+      <h4>RDA (as alpha-tocopherol)</h4>
+      <ul>
+        <li>Adults (19+): 15mg/day (22.4 IU natural; 33 IU synthetic)</li>
+        <li>Lactating Women: 19mg/day</li>
+        <li>Upper Tolerable Limit: 1,000mg/day alpha-tocopherol (high doses may interfere with vitamin K activity and increase bleeding risk)</li>
+      </ul>
+      <h4>Athletes / High Oxidative Stress</h4>
+      <ul>
+        <li>Intense exercise generates significant ROS; some research supports 100–400mg/day for active individuals, though very high doses (800mg+) may paradoxically blunt training adaptations by suppressing beneficial ROS signaling</li>
+      </ul>
+      <p>Prioritize food sources (nuts, seeds, vegetable oils) over supplementation when possible. The alpha-tocopherol form in supplements may displace and deplete gamma-tocopherol, which has its own unique health benefits.</p>
+    `
+  },
+  {
+    id: 'art-vitk',
+    title: 'Vitamin K',
+    summary: 'Blood coagulation, bone mineralization, and arterial calcification prevention.',
+    content: `
+      <h3>What Is Vitamin K?</h3>
+      <p>Vitamin K is a fat-soluble vitamin existing in two primary forms: K1 (phylloquinone, found in leafy green vegetables, kale, spinach, broccoli) and K2 (menaquinones, MK-4 through MK-13, found in fermented foods like natto, aged cheeses, and some animal products). K2 menaquinones, particularly MK-7, have significantly longer half-lives and may be more effective at reaching extra-hepatic tissues like bone and vasculature.</p>
+      <h3>What Does Vitamin K Do?</h3>
+      <p>Vitamin K is a cofactor for gamma-carboxylase enzymes, which activate vitamin K-dependent proteins via carboxylation of glutamic acid residues. Key targets include: coagulation factors (factors II, VII, IX, X, and proteins C and S), vitamin K deficiency causes uncontrolled bleeding; osteocalcin, a vitamin K-dependent bone matrix protein that binds calcium and incorporates it into hydroxyapatite; and matrix Gla protein (MGP), the most potent known inhibitor of vascular calcification, preventing calcium from depositing in arterial walls (vitamin K2 specifically activates MGP; this is why calcium + vitamin D supplementation ideally includes K2).</p>
+      <h3>How to Calculate Daily Vitamin K Needs</h3>
+      <h4>Adequate Intake (AI) — No formal RDA</h4>
+      <ul>
+        <li>Adult Men: 120 mcg/day (K1)</li>
+        <li>Adult Women: 90 mcg/day (K1)</li>
+        <li>No established UL for K1 or K2 from food sources</li>
+      </ul>
+      <h4>K2 Supplementation for Bone / Cardiovascular Health</h4>
+      <ul>
+        <li>MK-7 form: 100–300 mcg/day is a commonly studied dose range</li>
+        <li>Critical interaction: warfarin (an anticoagulant) blocks vitamin K activity, individuals on warfarin must keep vitamin K intake consistent and consult their physician before changing dietary intake or supplementation</li>
+      </ul>
+      <p>If supplementing vitamin D and calcium, strong evidence supports co-supplementing with vitamin K2 (MK-7) to ensure calcium is directed to bone rather than arterial walls.</p>
+    `
+  },
+  {
+    id: 'art-b6',
+    title: 'Vitamin B6',
+    summary: 'Amino acid metabolism, neurotransmitter synthesis, and glycogen breakdown.',
+    content: `
+      <h3>What Is Vitamin B6?</h3>
+      <p>Vitamin B6 (pyridoxine) is a water-soluble vitamin that serves as the precursor to pyridoxal-5-phosphate (PLP), its biologically active coenzyme form. PLP is one of the most versatile coenzymes in metabolism, participating in over 100 enzymatic reactions. It is found in high concentrations in poultry, fish (especially tuna and salmon), potatoes, bananas, chickpeas, and fortified cereals. Being water-soluble, it is not stored in large quantities and must be consumed regularly.</p>
+      <h3>What Does Vitamin B6 Do?</h3>
+      <p>PLP (active B6) is essential for: amino acid metabolism, transamination (shuttling nitrogen between amino acids), deamination, and decarboxylation; neurotransmitter synthesis, serotonin, dopamine, norepinephrine, GABA, and histamine all require PLP for their biosynthesis from amino acid precursors; glycogen phosphorylase activation (the enzyme that breaks down stored glycogen in muscle and liver for energy during fasting or exercise); heme synthesis (required for delta-aminolevulinic acid synthase, the first step in hemoglobin production); and immune function (lymphocyte proliferation and antibody production).</p>
+      <h3>How to Calculate Daily Vitamin B6 Needs</h3>
+      <h4>RDA by Group</h4>
+      <ul>
+        <li>Adults 19–50: 1.3mg/day</li>
+        <li>Men 51+: 1.7mg/day</li>
+        <li>Women 51+: 1.5mg/day</li>
+        <li>Pregnant Women: 1.9mg/day</li>
+        <li>Lactating Women: 2.0mg/day</li>
+        <li>Upper Tolerable Limit: 100mg/day (chronic excess causes peripheral neuropathy)</li>
+      </ul>
+      <h4>Athletes / High Protein Intake</h4>
+      <ul>
+        <li>Needs scale with protein intake: approximately 0.016mg B6 per gram of protein consumed</li>
+        <li>High-protein athletes (200g+/day) may benefit from 2–3mg/day</li>
+      </ul>
+    `
+  },
+  {
+    id: 'art-b12',
+    title: 'Vitamin B12',
+    summary: 'Red blood cell formation, DNA synthesis, and myelin sheath maintenance.',
+    content: `
+      <h3>What Is Vitamin B12?</h3>
+      <p>Vitamin B12 (cobalamin) is a water-soluble vitamin with a uniquely complex molecular structure, the largest and most structurally complex vitamin, featuring a corrin ring centered on a cobalt atom. It is found almost exclusively in animal products: meat, fish, shellfish, eggs, and dairy. Plant foods contain no meaningful B12 (with the exception of some nori seaweed in small amounts). Absorption requires intrinsic factor (IF), a glycoprotein secreted by parietal cells in the stomach, IF deficiency causes pernicious anemia regardless of dietary intake.</p>
+      <h3>What Does Vitamin B12 Do?</h3>
+      <p>B12 functions as a coenzyme in two critical reactions: (1) methylcobalamin enables methionine synthase to convert homocysteine to methionine and to regenerate the active form of folate (5-methylTHF to THF), making B12 and folate metabolism deeply interdependent; and (2) adenosylcobalamin enables methylmalonyl-CoA mutase, a mitochondrial enzyme critical for propionate metabolism and myelin synthesis. Key physiological roles: red blood cell maturation (B12 deficiency causes megaloblastic anemia, large, dysfunctional RBCs), DNA synthesis (depends on adequate folate cycling, which requires B12), and maintenance of the myelin sheath surrounding nerve axons, deficiency causes progressive neurological damage (subacute combined degeneration of the spinal cord).</p>
+      <h3>How to Calculate Daily Vitamin B12 Needs</h3>
+      <h4>RDA</h4>
+      <ul>
+        <li>Adults (19+): 2.4 mcg/day</li>
+        <li>Pregnant Women: 2.6 mcg/day</li>
+        <li>Lactating Women: 2.8 mcg/day</li>
+        <li>No established UL (excess is readily excreted; toxicity is not reported at supplemental doses)</li>
+      </ul>
+      <h4>Special Populations</h4>
+      <ul>
+        <li>Vegans and strict vegetarians: must supplement (typical recommendation: 250–500 mcg cyanocobalamin or methylcobalamin daily, or 2,500 mcg weekly)</li>
+        <li>Individuals over 50: absorption from food declines due to reduced stomach acid; fortified foods or supplements recommended</li>
+        <li>Metformin users: B12 deficiency is a documented side effect; monitor levels regularly</li>
+      </ul>
+    `
+  },
+  {
+    id: 'art-folate',
+    title: 'Folate (Vitamin B9)',
+    summary: 'DNA synthesis, cell division, and neural tube development.',
+    content: `
+      <h3>What Is Folate?</h3>
+      <p>Folate (vitamin B9) is a water-soluble B vitamin that exists naturally in food as polyglutamate forms and in supplements as folic acid (a more stable synthetic monoglutamate form) or methylfolate (5-MTHF, the biologically active form). Dietary folate is found in abundance in dark leafy greens (spinach, kale, romaine), legumes (lentils, chickpeas, black beans), asparagus, avocado, and beets. Folic acid in fortified foods (breads, cereals, pasta) is 85% bioavailable; dietary folate averages ~50% bioavailability.</p>
+      <h3>What Does Folate Do?</h3>
+      <p>Folate coenzymes (in their tetrahydrofolate, THF, forms) are central to one-carbon metabolism, the transfer of single carbon units essential for: DNA synthesis, folate provides the carbon unit for thymidylate synthase, enabling synthesis of thymine (deficiency halts DNA replication and causes megaloblastic anemia); purine synthesis (required for both adenine and guanine, the bases of DNA and RNA); homocysteine remethylation (folate works with vitamin B12 to convert homocysteine back to methionine, elevated homocysteine is a cardiovascular risk factor); and neural tube development, the single most critical period; adequate folate in the periconceptional period prevents neural tube defects (spina bifida, anencephaly).</p>
+      <h3>How to Calculate Daily Folate Needs</h3>
+      <h4>RDA (expressed as Dietary Folate Equivalents, DFE)</h4>
+      <ul>
+        <li>Adults (19+): 400 mcg DFE/day</li>
+        <li>Pregnant Women: 600 mcg DFE/day (start at least 1 month pre-conception)</li>
+        <li>Lactating Women: 500 mcg DFE/day</li>
+        <li>Upper Tolerable Limit: 1,000 mcg/day of folic acid (synthetic form only — masks B12 deficiency neurological symptoms; no UL established for natural food folate)</li>
+      </ul>
+      <h4>DFE Conversion</h4>
+      <ul>
+        <li>1 mcg DFE = 1 mcg food folate = 0.6 mcg folic acid (with food) = 0.5 mcg folic acid (supplement, fasted)</li>
+      </ul>
+      <h4>MTHFR Gene Variants</h4>
+      <ul>
+        <li>~10% of the population carries MTHFR C677T polymorphisms reducing folate conversion efficiency by up to 70%; these individuals may benefit from direct 5-MTHF (methylfolate) supplementation rather than folic acid</li>
+      </ul>
+    `
+  }
+];
+
+/* ─── RENDER ARTICLES ─── */
+function renderArticles(list) {
+  const container = document.getElementById('right-articles-container');
+  if (!container) return;
+  if (list.length === 0) {
+    container.innerHTML = `<div style="padding:20px; color:var(--text-muted); text-align:center;">No articles found.</div>`;
+    return;
+  }
+  container.innerHTML = list.map(art =>
+    `<div class="article-pill" onclick="openArticle('${art.id}')">
+      <div class="article-title">${art.title}</div>
+      <span class="article-summary">${art.summary}</span>
+    </div>`
+  ).join('');
+}
+
+/* ─── SEARCH OVERLAY ─── */
+let searchOpen = false;
+
+function toggleSearch() {
+  searchOpen ? closeSearch() : openSearch();
+}
+
+function openSearch() {
+  searchOpen = true;
+  const overlay = document.getElementById('searchOverlay');
+  overlay.classList.add('visible');
+  // Clear and focus
+  const input = document.getElementById('wiki-search-input');
+  input.value = '';
+  renderSearchResults('');
+  setTimeout(() => input.focus(), 50);
+}
+
+function closeSearch() {
+  searchOpen = false;
+  document.getElementById('searchOverlay').classList.remove('visible');
+}
+
+function renderSearchResults(query) {
+  const container = document.getElementById('search-results-container');
+  if (!container) return;
+  const q = query.trim().toLowerCase();
+  if (!q) {
+    container.innerHTML = '';
+    return;
+  }
+  const matches = ARTICLES.filter(a =>
+    a.title.toLowerCase().includes(q) ||
+    a.summary.toLowerCase().includes(q) ||
+    a.content.toLowerCase().includes(q)
+  );
+  if (matches.length === 0) {
+    container.innerHTML = `<div style="padding:20px 20px;color:var(--text-muted);font-size:13px;">No articles found for "<strong>${query}</strong>"</div>`;
+    return;
+  }
+  container.innerHTML = matches.map(art => `
+    <div onclick="openArticle('${art.id}'); closeSearch();" style="
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: background 0.12s;
+    " onmouseover="this.style.background='var(--hover-bg)'" onmouseout="this.style.background='transparent'">
+      <div style="font-weight:600;font-size:14px;color:var(--text-main);margin-bottom:3px;">${art.title}</div>
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.4;">${art.summary}</div>
+    </div>
+  `).join('');
+}
+
+function handleSearch(query) {
+  renderSearchResults(query);
+}
+
+// Close search on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && searchOpen) closeSearch();
+});
+
+function openArticle(id) {
+  const art = ARTICLES.find(a => a.id === id);
+  if (!art) return;
+  document.getElementById('reader-title').textContent = art.title;
+  document.getElementById('reader-content').innerHTML = art.content;
+  switchView('article-reader');
+}
+
+renderArticles(ARTICLES);
+
+/* ─── INTAKE CALCULATOR ─── */
+function calcIntakes() {
+  const wKg = getWeightKg('in-weight-lbs', 'in-weight-kg');
+  const age = parseInt(document.getElementById('in-age').value);
+  const sex = document.getElementById('in-sex').value;
+  const activity = document.getElementById('in-activity').value;
+  const goal = document.getElementById('in-goal').value;
+
+  if (isNaN(wKg) || isNaN(age) || wKg <= 0 || age <= 0) {
+    document.getElementById('in-results').innerHTML =
+      '<div style="color:#ef4444; background:#fee2e2; border:1px solid #fca5a5; border-radius:6px; padding:12px; font-weight:500;">Please enter valid weight and age values.</div>';
+    return;
+  }
+
+  /* ── Protein (g/kg evidence-based) ── */
+  let proMin, proMax;
+  if (activity === 'sedentary') { proMin = wKg * 0.8;  proMax = wKg * 1.0; }
+  else if (activity === 'light')  { proMin = wKg * 1.2;  proMax = wKg * 1.6; }
+  else if (activity === 'moderate') { proMin = wKg * 1.6; proMax = wKg * 2.0; }
+  else if (activity === 'active')   { proMin = wKg * 1.8; proMax = wKg * 2.2; }
+  else                              { proMin = wKg * 2.0; proMax = wKg * 2.4; }
+  if (goal === 'gain') { proMin *= 1.1; proMax *= 1.1; }
+
+  /* ── Fat (g) — 25–30% of TDEE estimate, floor 0.5g/kg ── */
+  const hCm = getHeightCm('in-height-ft', 'in-height-in', 'in-height-cm');
+
+  let bmrEstimate;
+  if (age < 65) {
+    const base = 10 * wKg + 6.25 * hCm - 5 * age;
+    bmrEstimate = sex === 'M' ? base + 5 : base - 161;
+  } else {
+    bmrEstimate = sex === 'M' ? 11.711 * wKg + 587.7 : 9.082 * wKg + 658.5;
+  }
+
+  const actMultipliers = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, extreme: 1.9 };
+  const actMult = actMultipliers[activity] || 1.55;
+  let tdee = bmrEstimate * actMult;
+  if (goal === 'lose') tdee -= 400;
+  if (goal === 'gain') tdee += 300;
+
+  // Fat: 25% of TDEE, minimum 0.5g/kg
+  const fatGFromTDEE = (tdee * 0.25) / 9;
+  const fatMin = Math.max(Math.round(fatGFromTDEE), Math.round(wKg * 0.5));
+  const fatMax = Math.round((tdee * 0.30) / 9);
+
+  /* ── Carbohydrates: remaining calories after protein + fat ── */
+  const proCalMin = Math.round(proMin) * 4;
+  const fatCalMid = ((fatMin + fatMax) / 2) * 9;
+  const carbCal = tdee - proCalMin - fatCalMid;
+  const carbMin = Math.max(130, Math.round(carbCal / 4));
+  const carbMax = Math.round(carbMin * 1.3);
+
+  /* ── Fiber: 14g per 1000 kcal, DRI-floored ── */
+  const fiberBase = (tdee / 1000) * 14;
+  const fiberFloor = sex === 'M' ? (age > 50 ? 30 : 38) : (age > 50 ? 21 : 25);
+  const fiberTarget = Math.round(Math.max(fiberBase, fiberFloor));
+
+  /* ── Micronutrients: age & sex adjusted ── */
+  const calcium = age < 51 ? '1,000mg' : (sex === 'M' ? '1,000mg' : '1,200mg');
+  const ironMg = sex === 'M' ? '8mg' : (age < 51 ? '18mg' : '8mg');
+  const magMin = sex === 'M' ? (age < 31 ? 400 : 420) : (age < 31 ? 310 : 320);
+  const magMax = magMin + 40;
+  const potassium = sex === 'M' ? '3,400mg' : '2,600mg';
+
+  const vitA = sex === 'M' ? '900 mcg RAE' : '700 mcg RAE';
+  const vitC = sex === 'M' ? '90mg' : '75mg';
+  const vitD = age < 71 ? '600 IU (15 mcg)' : '800 IU (20 mcg)';
+  const vitE = '15mg';
+  const vitK = sex === 'M' ? '120 mcg' : '90 mcg';
+  const b6 = age < 51 ? '1.3mg' : (sex === 'M' ? '1.7mg' : '1.5mg');
+  const b12 = '2.4 mcg';
+  const folate = '400 mcg DFE';
+
+  const wLink = (name, key) => formatWikiLink(name, key || name.toLowerCase());
+
+  const html = `
+    <table>
+      <thead>
+        <tr><th>Nutrient</th><th>Daily Target</th><th>Basis</th></tr>
+      </thead>
+      <tbody>
+        <tr class="section-header-row"><td colspan="3">Macronutrients</td></tr>
+        <tr><td>${wLink('Protein')}</td><td>${Math.round(proMin)}–${Math.round(proMax)}g</td><td>${(proMin/wKg).toFixed(1)}–${(proMax/wKg).toFixed(1)} g/kg body weight</td></tr>
+        <tr><td>${wLink('Carbohydrates','carbs')}</td><td>${carbMin}–${carbMax}g</td><td>Remaining calories after protein & fat</td></tr>
+        <tr><td>${wLink('Dietary Fats','fats')}</td><td>${fatMin}–${fatMax}g</td><td>25–30% of TDEE (~${Math.round(tdee)} kcal)</td></tr>
+        <tr><td>${wLink('Dietary Fiber','fiber')}</td><td>${fiberTarget}g</td><td>14g per 1,000 kcal (DRI floor: ${fiberFloor}g)</td></tr>
+        <tr class="section-header-row"><td colspan="3">Minerals</td></tr>
+        <tr><td>${wLink('Calcium')}</td><td>${calcium}</td><td>Age/sex-adjusted RDA</td></tr>
+        <tr><td>${wLink('Sodium')}</td><td>&lt; 2,300mg</td><td>FDA Dietary Guidelines upper limit</td></tr>
+        <tr><td>${wLink('Zinc')}</td><td>${sex === 'M' ? '11mg' : '8mg'}</td><td>RDA by sex</td></tr>
+        <tr><td>${wLink('Iron')}</td><td>${ironMg}</td><td>RDA (higher for premenopausal women)</td></tr>
+        <tr><td>${wLink('Magnesium')}</td><td>${magMin}–${magMax}mg</td><td>Age/sex-adjusted RDA</td></tr>
+        <tr><td>${wLink('Potassium')}</td><td>${potassium}</td><td>Adequate Intake (AI) by sex</td></tr>
+        <tr class="section-header-row"><td colspan="3">Vitamins</td></tr>
+        <tr><td>${wLink('Vitamin A','vitamin a')}</td><td>${vitA}</td><td>RDA by sex</td></tr>
+        <tr><td>${wLink('Vitamin C','vitamin c')}</td><td>${vitC}</td><td>RDA by sex</td></tr>
+        <tr><td>${wLink('Vitamin D','vitamin d')}</td><td>${vitD}</td><td>RDA (age-adjusted)</td></tr>
+        <tr><td>${wLink('Vitamin E','vitamin e')}</td><td>${vitE}</td><td>RDA (adults 19+)</td></tr>
+        <tr><td>${wLink('Vitamin K','vitamin k')}</td><td>${vitK}</td><td>Adequate Intake by sex</td></tr>
+        <tr><td>${wLink('Vitamin B6','vitamin b6')}</td><td>${b6}</td><td>RDA (age/sex-adjusted)</td></tr>
+        <tr><td>${wLink('Vitamin B12','vitamin b12')}</td><td>${b12}</td><td>RDA (adults 19+)</td></tr>
+        <tr><td>${wLink('Folate (B9)','folate')}</td><td>${folate}</td><td>RDA (adults 19+)</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:12px; color:var(--text-muted);">
+      Estimated TDEE: <strong>${Math.round(tdee)} kcal/day</strong>. Targets are evidence-based estimates — individual needs vary. Consult a registered dietitian for clinical precision.
+    </p>
+  `;
+  document.getElementById('in-results').innerHTML = html;
+}
+
+/* ─── NUTRIENT CALCULATOR (macro-calculator) ─── */
+const ALL_NUTRIENTS = [
+  "Protein", "Carbohydrates", "Dietary Fats", "Dietary Fiber",
+  "Calcium", "Sodium", "Zinc", "Iron", "Magnesium", "Potassium",
+  "Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E", "Vitamin K",
+  "Vitamin B6", "Vitamin B12", "Folate (B9)"
+];
+const UNITS_G = { g:1, oz:28.3495, lb:453.592, ml:1, cup:240 };
+
+let mcId = 0, mcData = [{ id: ++mcId, macro: "Protein", val: "" }];
+
+function mcRender() {
+  document.getElementById('mc-macroRows').innerHTML = mcData.map(r => `
+    <div class="row">
+      <select onchange="mcUpdate(${r.id},'macro',this.value)" class="flex1">
+        ${ALL_NUTRIENTS.map(m =>
+          `<option ${m===r.macro?'selected':''} ${mcData.some(x=>x.macro===m)&&m!==r.macro?'disabled':''}>${m}</option>`
+        ).join('')}
+      </select>
+      <input type="number" placeholder="Amount" value="${r.val}" oninput="mcUpdate(${r.id},'val',this.value)" class="flex1" />
+      ${mcData.length > 1 ? `<button class="btn-remove" onclick="mcRemove(${r.id})">×</button>` : ''}
+    </div>
+  `).join('');
+  document.getElementById('mc-addMacroBtn').style.display =
+    mcData.length >= ALL_NUTRIENTS.length ? 'none' : 'block';
+}
+
+function mcAddMacroRow() {
+  const next = ALL_NUTRIENTS.find(m => !mcData.some(r => r.macro === m));
+  if (next) { mcData.push({ id: ++mcId, macro: next, val: "" }); mcRender(); }
+}
+function mcUpdate(id, fld, val) {
+  mcData.find(r => r.id === id)[fld] = val;
+  if (fld === 'macro') mcRender();
+}
+function mcRemove(id) { mcData = mcData.filter(r => r.id !== id); mcRender(); }
+
+function mcCalculate() {
+  const bAmt = parseFloat(document.getElementById('mc-baseAmount').value);
+  const eAmt = parseFloat(document.getElementById('mc-eatAmount').value);
+  const bG = bAmt * UNITS_G[document.getElementById('mc-baseUnit').value];
+  const eG = eAmt * UNITS_G[document.getElementById('mc-eatUnit').value];
+  if (!bG || !eG || bG <= 0) {
+    document.getElementById('mc-results').innerHTML =
+      '<div style="color:#ef4444;background:#fee2e2;border:1px solid #fca5a5;border-radius:6px;padding:12px;margin-top:15px;">Please enter valid base and target serving values.</div>';
+    return;
+  }
+  const ratio = eG / bG;
+  const foodName = document.getElementById('mc-food').value || 'Item';
+  let html = `<table style="max-width:800px;"><tr><th colspan="2">Nutrient Yield for ${Math.round(eG * 10) / 10}g of ${foodName}</th></tr><tr><th>Nutrient</th><th>Amount</th></tr>`;
+  mcData.filter(r => r.val !== "").forEach(r => {
+    const scaled = (parseFloat(r.val) * ratio).toFixed(2);
+    html += `<tr><td>${formatWikiLink(r.macro)}</td><td>${scaled}</td></tr>`;
+  });
+  html += `</table>`;
+  document.getElementById('mc-results').innerHTML = html;
+}
+mcRender();
+
+/* ─── DAILY TRACKER ─── */
+const DT_NUTRIENTS = [
+  "Protein", "Carbohydrates", "Dietary Fats", "Dietary Fiber",
+  "Calcium", "Sodium", "Zinc", "Iron", "Magnesium", "Potassium",
+  "Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E", "Vitamin K",
+  "Vitamin B6", "Vitamin B12", "Folate (B9)"
+];
+
+let dtUid = 0;
+let dtGoals = [{ id: ++dtUid, macro: "Protein", val: "" }];
+let dtFoods = [{ id: ++dtUid, name: "", m: [{ id: ++dtUid, macro: "Protein", val: "" }] }];
+
+function dtRender() {
+  document.getElementById('dt-goalsRows').innerHTML = dtGoals.map(g => `
+    <div class="row">
+      <select onchange="dtUpdateG(${g.id},'macro',this.value)" class="flex1">
+        ${DT_NUTRIENTS.map(m =>
+          `<option ${m===g.macro?'selected':''} ${dtGoals.some(x=>x.macro===m)&&m!==g.macro?'disabled':''}>${m}</option>`
+        ).join('')}
+      </select>
+      <input type="number" placeholder="Target Amount" value="${g.val}" oninput="dtUpdateG(${g.id},'val',this.value)" class="flex1" />
+      ${dtGoals.length > 1 ? `<button class="btn-remove" onclick="dtRemG(${g.id})">Remove</button>` : ''}
+    </div>
+  `).join('');
+  document.getElementById('dt-addGoalBtn').style.display =
+    dtGoals.length >= DT_NUTRIENTS.length ? 'none' : 'block';
+
+  document.getElementById('dt-foodsList').innerHTML = dtFoods.map((f, i) => `
+    <div style="border:1px solid var(--border-color);border-radius:6px;padding:15px;margin-bottom:15px;background:var(--app-bg);">
+      <div class="row">
+        <strong style="width:25px;color:var(--text-muted);">#${i+1}</strong>
+        <input type="text" placeholder="Entry Label (e.g., Lunch)" value="${f.name}" oninput="f.name=this.value" class="flex1" />
+        ${dtFoods.length > 1 ? `<button class="btn-remove" onclick="dtRemF(${f.id})">Delete</button>` : ''}
+      </div>
+      <div style="padding-left:40px;">
+        ${f.m.map(m => `
+          <div class="row" style="margin-top:10px;">
+            <select onchange="dtUpdateFM(${f.id},${m.id},'macro',this.value)" class="flex1">
+              ${DT_NUTRIENTS.map(x =>
+                `<option ${x===m.macro?'selected':''} ${f.m.some(y=>y.macro===x)&&x!==m.macro?'disabled':''}>${x}</option>`
+              ).join('')}
+            </select>
+            <input type="number" placeholder="Amount" value="${m.val}" oninput="dtUpdateFM(${f.id},${m.id},'val',this.value)" class="flex1" />
+            ${f.m.length > 1 ? `<button class="btn-remove" onclick="dtRemFM(${f.id},${m.id})">×</button>` : ''}
+          </div>
+        `).join('')}
+        ${f.m.length < DT_NUTRIENTS.length
+          ? `<button class="action-btn" onclick="dtAddFM(${f.id})" style="margin-top:10px;font-size:11px;padding:6px 12px;background:transparent;color:var(--text-main);border-color:var(--border-color);">+ Add Nutrient</button>`
+          : ''}
+      </div>
+    </div>
+  `).join('');
+  calcRemaining();
+}
+
+function dtAddGoal() {
+  const n = DT_NUTRIENTS.find(m => !dtGoals.some(g => g.macro === m));
+  if (n) { dtGoals.push({ id: ++dtUid, macro: n, val: "" }); dtRender(); }
+}
+function dtUpdateG(id, f, v) { dtGoals.find(g => g.id === id)[f] = v; dtRender(); }
+function dtRemG(id) { dtGoals = dtGoals.filter(g => g.id !== id); dtRender(); }
+function dtAddFood() {
+  dtFoods.push({ id: ++dtUid, name: "", m: [{ id: ++dtUid, macro: dtGoals[0]?.macro || "Protein", val: "" }] });
+  dtRender();
+}
+function dtRemF(id) { dtFoods = dtFoods.filter(f => f.id !== id); dtRender(); }
+function dtAddFM(fid) {
+  const f = dtFoods.find(x => x.id === fid);
+  const n = DT_NUTRIENTS.find(m => !f.m.some(x => x.macro === m));
+  if (n) { f.m.push({ id: ++dtUid, macro: n, val: "" }); dtRender(); }
+}
+function dtRemFM(fid, mid) {
+  const f = dtFoods.find(x => x.id === fid);
+  f.m = f.m.filter(x => x.id !== mid);
+  dtRender();
+}
+function dtUpdateFM(fid, mid, fld, v) {
+  dtFoods.find(x => x.id === fid).m.find(x => x.id === mid)[fld] = v;
+  dtRender();
+}
+
+function calcRemaining() {
+  const sec = document.getElementById('dt-remainingSection');
+  if (!dtGoals.some(g => g.val !== "")) { sec.style.display = 'none'; return; }
+  sec.style.display = 'block';
+  let totals = {};
+  dtFoods.forEach(f => f.m.forEach(m => {
+    totals[m.macro] = (totals[m.macro] || 0) + (parseFloat(m.val) || 0);
+  }));
+  let html = '<table><tr><th>Nutrient</th><th>Target</th><th>Logged</th><th>Variance</th></tr>';
+  dtGoals.forEach(g => {
+    const tgt = parseFloat(g.val) || 0;
+    const act = totals[g.macro] || 0;
+    const diff = tgt - act;
+    const pct = tgt > 0 ? Math.min((act / tgt) * 100, 100) : 0;
+    const over = diff < 0;
+    html += `
+      <tr>
+        <td><strong>${formatWikiLink(g.macro)}</strong></td>
+        <td>${tgt}</td>
+        <td>${act.toFixed(1)}</td>
+        <td style="${over ? 'color:#ef4444;font-weight:600;' : ''}">${Math.abs(diff).toFixed(1)} ${over ? 'Over' : 'Remaining'}</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="padding:0 15px 12px 15px;border-bottom:1px solid var(--border-color);">
+          <div class="progress-track"><div class="progress-bar ${over ? 'over' : ''}" style="width:${pct}%;"></div></div>
+        </td>
+      </tr>
+    `;
+  });
+  document.getElementById('dt-remainingCard').innerHTML = html + '</table>';
+}
+
+dtRender();
+
+/* ─── BMR CALCULATOR ─── */
+function bmrCalculate() {
+  const err = document.getElementById('bmr-errorMsg');
+  err.style.display = 'none';
+  const a = parseInt(document.getElementById('bmr-age').value);
+  const s = document.getElementById('bmr-sex').value;
+  const wKg = getWeightKg('bmr-weight-lbs', 'bmr-weight-kg');
+  const hCm = getHeightCm('bmr-heightFt', 'bmr-heightIn', 'bmr-height-cm');
+
+  if (isNaN(a) || isNaN(wKg) || wKg <= 0 || hCm <= 0) {
+    err.textContent = 'Please enter valid physiological data.';
+    err.style.display = 'block';
+    return;
+  }
+
+  let b = 0;
+  const male = s === 'male';
+  // Mifflin-St Jeor (standard ages), Harris-Benedict-derived for 65+
+  if (a < 65) {
+    const base = 10 * wKg + 6.25 * hCm - 5 * a;
+    b = male ? base + 5 : base - 161;
+  } else {
+    b = male ? 11.711 * wKg + 587.7 : 9.082 * wKg + 658.5;
+  }
+  b = Math.round(b);
+
+  const act = parseFloat(document.getElementById('bmr-activity').value);
+  const tdee = Math.round(b * act);
+
+  document.getElementById('bmr-results').innerHTML = `
+    <table style="max-width:800px;">
+      <tr><th>Expenditure Metric</th><th>Kilocalories (kcal)</th></tr>
+      <tr><td>Basal Metabolic Rate (BMR)</td><td>${b.toLocaleString()}</td></tr>
+      <tr><td>Total Daily Energy Expenditure (TDEE)</td><td>${tdee.toLocaleString()}</td></tr>
+      <tr><td>Weight Loss Target (TDEE − 400 kcal)</td><td>${(tdee - 400).toLocaleString()}</td></tr>
+      <tr><td>Muscle Gain Target (TDEE + 300 kcal)</td><td>${(tdee + 300).toLocaleString()}</td></tr>
+    </table>
+    <p style="margin-top:12px; font-size:12px; color:var(--text-muted);">
+      Calculated using Mifflin-St Jeor equation${a >= 65 ? ' (adjusted for age 65+ via modified Harris-Benedict)' : ''}. BMR assumes complete rest. TDEE accounts for activity level. Use <strong>${tdee.toLocaleString()} kcal</strong> as your caloric maintenance starting point.
+    </p>
+  `;
+}
+
+/* ─── BMI CALCULATOR ─── */
+const BMI_CLASSES = [
+  { key: 'underweight',  label: 'Underweight',        min: 0,    max: 18.5, color: '#2563eb', hex: '#2563eb',
+    advice: 'Body weight is below the healthy range. This can indicate insufficient caloric or nutrient intake and may be associated with fatigue, weakened immune function, and bone density loss. Gradually increasing food intake through nutrient-dense meals is recommended. Consulting a healthcare provider or registered dietitian is advised.' },
+  { key: 'normal',       label: 'Healthy Weight',     min: 18.5, max: 25,   color: '#16a34a', hex: '#16a34a',
+    advice: 'Body weight falls within the clinically healthy range. Focus on maintaining this through a balanced diet, regular physical activity, and adequate sleep. No significant changes to body weight are indicated.' },
+  { key: 'overweight',   label: 'Overweight',         min: 25,   max: 30,   color: '#ca8a04', hex: '#ca8a04',
+    advice: 'Body weight is above the healthy range. Elevated risk for cardiovascular disease, insulin resistance, and joint strain begins to emerge at this level. A moderate, sustainable reduction in body weight through improved dietary habits and increased physical activity is advisable.' },
+  { key: 'obese1',       label: 'Obesity (Class I)',  min: 30,   max: 35,   color: '#ea580c', hex: '#ea580c',
+    advice: 'This level indicates significant excess body weight with meaningful health implications including elevated blood pressure, blood sugar dysregulation, and metabolic strain. A structured approach to weight reduction through dietary changes and consistent exercise is strongly recommended, ideally with clinical guidance.' },
+  { key: 'obese2',       label: 'Obesity (Class II)', min: 35,   max: 40,   color: '#dc2626', hex: '#dc2626',
+    advice: 'Severe obesity with heightened risk for type 2 diabetes, sleep apnea, cardiovascular disease, and other comorbidities. Medical intervention is recommended. Weight loss at this level can dramatically improve health outcomes. Professional supervision is strongly advised.' },
+  { key: 'obese3',       label: 'Severe Obesity (Class III)', min: 40, max: Infinity, color: '#991b1b', hex: '#991b1b',
+    advice: 'Extreme obesity carries the highest health risk. Serious complications affecting every major organ system are probable. Immediate medical evaluation is essential. Interventions may include clinical nutrition therapy, exercise rehabilitation, and in some cases, surgical assessment.' },
+];
+
+function getBmiClass(bmi) {
+  return BMI_CLASSES.find(c => bmi >= c.min && bmi < c.max) || BMI_CLASSES[BMI_CLASSES.length - 1];
+}
+
+function bmiClassPercent(bmi) {
+  // Map BMI 10–50 linearly to 0–100% for the scale bar marker
+  const clamped = Math.max(10, Math.min(50, bmi));
+  return ((clamped - 10) / 40) * 100;
+}
+
+function drawStickFigure(sex, color) {
+  if (sex === 'male') {
+    return `<svg viewBox="0 0 80 175" width="82" height="160" xmlns="http://www.w3.org/2000/svg">
+      <!-- Head: floating circle -->
+      <circle cx="40" cy="16" r="13" fill="${color}"/>
+
+      <!-- Torso -->
+      <rect x="27" y="36" width="26" height="72" rx="6" fill="${color}"/>
+
+      <!-- Left Arm (parallel, attached via shoulder block, slightly apart from torso) -->
+      <rect x="14" y="36" width="10" height="72" rx="5" fill="${color}"/>
+
+      <!-- Right Arm (parallel, attached via shoulder block, slightly apart from torso) -->
+      <rect x="56" y="36" width="10" height="72" rx="5" fill="${color}"/>
+
+      <!-- Shoulder Connection Block (bridges arms to torso to make them attached) -->
+      <rect x="18" y="36" width="44" height="12" fill="${color}"/>
+
+      <!-- Left leg -->
+      <rect x="27" y="100" width="11" height="72" rx="5.5" fill="${color}"/>
+
+      <!-- Right leg -->
+      <rect x="42" y="100" width="11" height="72" rx="5.5" fill="${color}"/>
+    </svg>`;
+
+  } else {
+    // Female - unchanged
+    const dressPath = `M24,62 L56,62 L74,112 L6,112 Z`;
+    const leftArm  = `M15,42 L24,42 L11,98 L2,98 Z`;
+    const rightArm = `M65,42 L56,42 L69,98 L78,98 Z`;
+
+    return `<svg viewBox="0 0 80 175" width="82" height="160" xmlns="http://www.w3.org/2000/svg">
+      <!-- Head: floating -->
+      <circle cx="40" cy="16" r="13" fill="${color}"/>
+
+      <!-- Upper torso rectangle (rounded) -->
+      <rect x="24" y="36" width="32" height="30" rx="7" ry="7" fill="${color}"/>
+
+      <!-- Left arm: angled strip parallel to dress edge, rounded ends -->
+      <path d="${leftArm}" fill="${color}" stroke="${color}" stroke-width="4"
+            stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Right arm: mirror -->
+      <path d="${rightArm}" fill="${color}" stroke="${color}" stroke-width="4"
+            stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Dress: trapezoid, sharp bottom corners -->
+      <path d="${dressPath}" fill="${color}"/>
+
+      <!-- Dress top overlap to merge cleanly with torso -->
+      <rect x="24" y="58" width="32" height="8" fill="${color}"/>
+
+      <!-- Left leg -->
+      <rect x="21" y="111" width="17" height="61" rx="7" ry="7" fill="${color}"/>
+
+      <!-- Right leg -->
+      <rect x="42" y="111" width="17" height="61" rx="7" ry="7" fill="${color}"/>
+
+      <!-- Leg gap -->
+      <rect x="38" y="118" width="4" height="56" fill="var(--card-bg, #fff)"/>
+    </svg>`;
+  }
+}
+
+function bmiCalculate() {
+  const errEl = document.getElementById('bmi-errorMsg');
+  errEl.style.display = 'none';
+
+  const sex     = document.getElementById('bmi-sex').value;
+  const age     = parseInt(document.getElementById('bmi-age').value);
+  const weightKg = getWeightKg('bmi-weight-lbs', 'bmi-weight-kg');
+  const hCm     = getHeightCm('bmi-heightFt', 'bmi-heightIn', 'bmi-height-cm');
+  const heightM = hCm / 100;
+
+  if (!hCm || isNaN(weightKg) || weightKg <= 0 || isNaN(age) || age < 2) {
+    errEl.textContent = 'Please enter valid height, weight, and age values.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (heightM <= 0) {
+    errEl.textContent = 'Please enter a valid height.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  const bmi = weightKg / (heightM * heightM);
+  const bmiRounded = Math.round(bmi * 10) / 10;
+  const cls = getBmiClass(bmi);
+  const pct = bmiClassPercent(bmi);
+  const figSvg = drawStickFigure(sex, cls.color);
+
+  // Build scale bar segments
+  const thresholds = [10, 18.5, 25, 30, 35, 40, 50];
+  const segWidths = [];
+  for (let i = 0; i < thresholds.length - 1; i++) {
+    segWidths.push(((thresholds[i+1] - thresholds[i]) / 40) * 100);
+  }
+  const scaleSegments = BMI_CLASSES.map((c, i) =>
+    `<div class="bmi-scale-segment" style="flex:${segWidths[i]};background:${c.color};"></div>`
+  ).join('');
+
+  const classRows = BMI_CLASSES.map(c => {
+    const rangeStr = c.max === Infinity ? `≥ ${c.min}` : `${c.min} – ${c.max}`;
+    const isActive = c.key === cls.key;
+    return `<div class="bmi-class-row ${isActive ? 'active-class' : ''}">
+      <div class="bmi-class-dot" style="background:${c.color};"></div>
+      <span class="bmi-class-name" style="${isActive ? `color:${c.color};` : ''}">${c.label}${isActive ? ' ◀ You' : ''}</span>
+      <span class="bmi-class-range">${rangeStr}</span>
+    </div>`;
+  }).join('');
+
+  document.getElementById('bmi-results').innerHTML = `
+    <div class="bmi-result-wrapper">
+
+      <!-- BMI Score Card -->
+      <div class="bmi-score-card">
+        <div class="bmi-score-number" style="color:${cls.color};">${bmiRounded}</div>
+        <div class="bmi-score-label">Your BMI</div>
+        <div class="bmi-class-badge" style="color:${cls.color};">${cls.label}</div>
+      </div>
+      
+      <!-- Figure Card -->
+      <div class="bmi-figure-card">
+        ${figSvg}
+      </div>
+
+      <!-- Description -->
+      <div class="bmi-description-card">
+        <div class="bmi-desc-title">Clinical Assessment</div>
+        <div class="bmi-desc-text">${cls.advice}</div>
+      </div>
+      
+      <!-- Scale Bar -->
+      <div class="bmi-scale-wrapper">
+        <div class="bmi-scale-title">BMI Scale</div>
+        <div class="bmi-marker-row">
+          <div class="bmi-marker-triangle" style="left:${pct}%; color:${cls.color};">▼</div>
+        </div>
+        <div class="bmi-scale-bar">
+          ${scaleSegments}
+        </div>
+        <div class="bmi-scale-labels">
+          <span>10</span><span>18.5</span><span>25</span><span>30</span><span>35</span><span>40</span><span>50</span>
+        </div>
+        <div class="bmi-class-rows">
+          ${classRows}
+        </div>
+      </div>
+
+    </div>
+  `;
+}
+</script>
+</body>
+</html>
